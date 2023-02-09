@@ -3,7 +3,7 @@
 mixin add-game-form()
   -
     form_inputs = [
-      { label: 'E-mail', inptName: "email", type: "email", inptPlaceholder: 'Your e-mail address' },
+      { label: 'E-mail*', inptName: "email", req: true, type: "email", inptPlaceholder: 'Your e-mail address' },
       { label: 'What is the name of the game?*', maxLength: true, req: true, inptName: "game_name", type: "text", inptPlaceholder: 'Answer' },
       { label: 'A brief description of the game*', req: true, inptName: "brief", textarea: true, inptPlaceholder: 'Answer' },
       {
@@ -15,11 +15,11 @@ mixin add-game-form()
         inptPlaceholder: 'Select date'
       },
       { label: 'Your Website*', req: true, inptName: "website", type: "url", inptPlaceholder: 'Answer' },
-      { label: 'Your Twitter', inptName: "twitter", type: "text", inptPlaceholder: 'Answer' },
-      { label: 'Your Discord', inptName: "discord", type: "text", inptPlaceholder: 'Answer' },
-      { label: 'Your Telegram', inptName: "telegram", type: "text", inptPlaceholder: 'Answer' },
-      { label: 'Your Facebook', inptName: "facebook", type: "text", inptPlaceholder: 'Answer' },
-      { label: 'Your YouTube', inptName: "youTube", type: "text", inptPlaceholder: 'Answer' },
+      { label: 'Your Twitter', inptName: "twitter", type: "url", inptPlaceholder: 'Answer' },
+      { label: 'Your Discord', inptName: "discord", type: "url", inptPlaceholder: 'Answer' },
+      { label: 'Your Telegram', inptName: "telegram", type: "url", inptPlaceholder: 'Answer' },
+      { label: 'Your Facebook', inptName: "facebook", type: "url", inptPlaceholder: 'Answer' },
+      { label: 'Your YouTube', inptName: "youTube", type: "url", inptPlaceholder: 'Answer' },
       {
         label: 'Add the game logo*',
         file: true,
@@ -112,7 +112,7 @@ mixin add-game-form()
           else if inpt.date
             span.game-form__input-label= inpt.label
             span.game-form__text= inpt.dateText
-            .game-form__input.game-form__input--small.game-form__input--iconed.js-validate-container
+            label.game-form__input.game-form__input--small.game-form__input--iconed.js-validate-container
               input(type='text', name=inpt.inptName, data-parsley-required=reqClass, data-parsley-date, data-parsley-group=legends_labels[0], class='gl-input js-date-inpt', placeholder= inpt.inptPlaceholder)
           else if inpt.file
             span.game-form__input-label= inpt.label
@@ -128,7 +128,7 @@ mixin add-game-form()
           else
             label.game-form__input.js-validate-container
               span.game-form__input-label= inpt.label
-              input(type='text', name=inpt.inptName, data-parsley-type=inpt.type, data-parsley-required=reqClass, data-parsley-group=legends_labels[0], class='gl-input', placeholder= inpt.inptPlaceholder)
+              input(type=inpt.type, name=inpt.inptName, data-parsley-type=inpt.type, data-parsley-required=reqClass, data-parsley-group=legends_labels[0], class='gl-input', placeholder= inpt.inptPlaceholder)
 
       .game-form.game-form-step.js-validate-container
         input(type='text', name='genre', class='gl-visually-hidden js-real-inpt', data-parsley-group=legends_labels[1], data-parsley-required, value='')
