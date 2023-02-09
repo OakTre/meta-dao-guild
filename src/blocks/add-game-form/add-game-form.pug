@@ -86,8 +86,8 @@ mixin add-game-form()
   section.game-form-container
     form.add-game-form.js-add-game-form(action='./', enctype='multipart/form-data', data-need-validation)
       //- для дев разработки
-      //- input(type='hidden', class='js-current-step', name='step', value='9')
-      //- input(type='hidden', class='js-current-group', name='current_group', value=legends_labels[9])
+      //- input(type='hidden', class='js-current-step', name='step', value='4')
+      //- input(type='hidden', class='js-current-group', name='current_group', value=legends_labels[4])
       h2.add-game-form__heading Add game
       ul.add-game-form__headings
         for label, i in legends_labels
@@ -171,7 +171,7 @@ mixin add-game-form()
         ul.game-form__checkbox-container.js-validate-container
           for check in status_checks
             li.game-form__checkbox-item.game-form__checkbox-item--full
-              label.gl-checkbox-arrow
+              label.gl-checkbox-arrow.gl-checkbox-arrow--rounded
                 input(type='radio', name='status', data-parsley-group=legends_labels[4], data-parsley-required, class='gl-visually-hidden gl-checkbox-arrow__control', value=check)
                 span.gl-checkbox-arrow__text= check
 

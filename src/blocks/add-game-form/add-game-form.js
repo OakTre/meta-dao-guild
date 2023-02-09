@@ -42,6 +42,12 @@ ready(() => {
     autoClose: true,
     onSelect ({date, formattedDate, datepicker}) {
       datepicker.$el.closest('.game-form__input').classList.remove('is-calendar-active');
+      const error = datepicker.$el.closest('.game-form__input').querySelector('.parsley-errors-list');
+
+      if (error) {
+        datepicker.$el.classList.remove('parsley-error');
+        error.remove();
+      }
     },
   })
 
