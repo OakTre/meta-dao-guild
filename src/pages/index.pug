@@ -1,0 +1,33 @@
+extends ../pug/layout.pug
+
+block meta
+  title Page 1
+  meta(name='description', content='')
+
+block layout-container
+  - const breadCrumbs = [{text: "Meta DAO", href: "#"}, {text: "discover games", href: "#"}, {text: "games", href: "#"}, {text: "thetan arena"}];
+
+  .gl-layout-container.overlayscrollbars
+    +header("games")
+    .gl-layout-content
+      .gl-bread-crumbs--main
+        +bread-crumbs(breadCrumbs)
+      .gl-page-content
+        .gl-grid-container-24
+          +main-slider()
+          +play-now()
+          +reviews()
+          .gl-full-row-24.gl-grid-container-24
+            +main-info()
+            .gl-grid-column-quarter-end
+              +basic-info()
+              +details()
+              +learn()
+              +more-articles()
+          +marketplace()
+          +reviews-list()
+          +social()
+          +similar-games()
+
+    +side-bar()
+    +footer()

@@ -1,0 +1,39 @@
+//- Все примеси в этом файле должны начинаться c имени блока (play-now)
+
+mixin play-now()
+  - const links = [{modClass: "home", href: ""}, {modClass: "twitter", href: ""}, {modClass: "discord", href: ""}, {modClass: "telegram", href: ""}, {modClass: "facebook", href: ""}, {modClass: "youtube", href: ""}];
+
+  .play-now.gl-block.gl-block--gradient
+    .play-now__content
+      .play-now__content-block
+        .play-now__header
+          picture
+            source(srcset="img/thetan-arena.webp", type="image/webp")
+            img(loading="lazy" src="img/thetan-arena.png", alt="thetan-arena" width="54" height="54").play-now__logo
+
+          .play-now__title-container
+            .play-now__title-wrapper
+              .play-now__title Thetan Arena
+              form.play-now__control-wrapper.gl-subscribe-form
+                label.gl-subscribe-input-wrapper
+                  input(
+                    type="checkbox",
+                    name="subscribe",
+                  ).gl-subscribe-input
+                  .gl-subscribe-input-content
+
+            .play-now__broadcast-wrapper
+              .play-now__broadcast-live Live
+              .play-now__broadcast-date Start: 10.01.2022
+
+        .play-now__info PvP MOBA mobile game on Binance Smart Chain. You can gather your friends, form a team, battle with others and earn money with just your skills.
+
+      .play-now__content-block
+        .play-now__links-container
+          each link in links
+            a(href=link.href, class=`play-now__control--${link.modClass}`).play-now__control
+
+        .play-now__btn-container
+          button.gl-btn play now
+
+

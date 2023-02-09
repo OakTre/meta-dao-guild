@@ -1,0 +1,76 @@
+@import "src/scss/sizes.scss";
+
+:root {
+  --page-content-padding: 32px;
+  --block-padding-side: 30px;
+  --main-grid-gap: 20px;
+
+  @include for-hg-down {
+    --main-grid-gap: 16px;
+    --block-padding-side: 16px;
+  }
+
+  @include for-md-down {
+    --page-content-padding: 24px;
+  }
+
+  /* colors */
+  --purple-color: #962FED;
+  --purple-color-hover: #a84bff;
+  --purple-pale-color: #6B1BAF;
+  --white-color: #FFFFFF;
+  --color-white-alfa: rgba(255 255 255 / 92%);
+  --black-color: #000;
+  --gray-color-opasity-6: rgba(255, 255, 255, 0.6);
+  --gray-color-opasity-05: rgba(255, 255, 255, 0.05);
+  --gray-color-opasity-2: rgba(255, 255, 255, 0.2);
+  --gray-middle-color: #75758A;
+  --gray-light-color: #C9C9C9;
+  --blue-color: #2074D6;
+  --blue-dark-color: #361D8F;
+  --blue-middle-color: #4426AF;
+  --layout-color: #080A2C;
+  --header-color: #160B3C;
+  --purple-background: #1F0D5D;
+  --purple-background-07: rgba(35, 16, 96, .7);
+  --purple-background-06: rgba(58, 21, 137, .6);
+  --purple-background-08: rgba(14, 16, 63, 0.8);
+  --purple-dark-background: #22125B;
+  --header-border-color: #311059;
+  --purple-middle-background: #251165;
+  --table-border-color: #513F88;
+  --purple-block-color: #251063;
+  --scroll-backgroud: #1c0c52;
+  --green-dark-opasity-color: rgba(96, 255, 40, 0.1);
+  --green-color: #60FF28;
+  --orange-color: #FFD028;
+  --red-color: #CF1313;
+  --green-dark-color: #3FA51B;
+  --header-link-color: #e8e6e3;
+  --header-link-hover: rgb(60, 244, 255);
+
+  /* transitions */
+  --transition-duration-short: 200ms;
+  --transition-duration-fast: 350ms;
+  --transition-duration-middle: 400ms;
+  --transition-duration-big: 500ms;
+
+  /* border-radius */
+  --border-radius-vaery-tiny: 1px;
+  --border-radius-tiny: 2px;
+  --border-radius-verty-small: 3px;
+  --border-radius-small: 6px;
+  --border-radius-middle: 8px;
+  --border-radius-big: 10px;
+  --border-radius-huge: 16px;
+
+  /* z-index */
+  --z-index-header: 2;
+  --z-index-side-bar: 3;
+  --z-index-modal: 4;
+  --z-pagination-swiper: 5;
+
+  /* основной шрифт проета */
+  --font-family-main: 'GothamPro', sans-serif;
+}
+

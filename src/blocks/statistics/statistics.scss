@@ -1,0 +1,156 @@
+@import "src/scss/sizes";
+
+.statistics {
+  grid-column: 1 / 13;
+  padding-bottom: 10px;
+  padding-top: 22px;
+  width: 100%;
+
+  @include for-fl-down {
+    grid-column: 1 / 25;
+  }
+
+  @include for-md-down {
+    grid-column: 1;
+    width: calc(100vw - (var(--page-content-padding))*2);
+    padding-right: 0;
+  }
+
+  &--right {
+    grid-column: 13 / 25;
+
+    @include for-fl-down {
+      grid-column: 1 / 25;
+    }
+
+    @include for-md-down {
+      grid-column: 1;
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+
+    @include for-md-down {
+      padding-right: var(--block-padding-side);
+    }
+  }
+
+  &__more-link {
+    padding: 3px 16px 3px 6px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    text-transform: uppercase;
+    background-color: var(--purple-color);
+    color: var(--white-color);
+    position: relative;
+    height: min-content;
+    border-radius: var(--border-radius-verty-small);
+    transition: background-color var(--transition-duration-fast);
+
+    &:hover {
+      background-color: var(--purple-color-hover);
+    }
+
+    &:before {
+      position: absolute;
+      content: '';
+      top: 50%;
+      right: 4px;
+      width: 12px;
+      height: 12px;
+      transform: translateY(-50%) rotate(-90deg);
+      background-image: url("../img/arrow-wite.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__swiper-wrapper {
+    padding-bottom: 56px;
+  }
+
+  &__table-container {
+    width: 100%;
+    font-size: 14px;
+    line-height: 14px;
+  }
+
+  &__table-head-title, &__table-cell {
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+
+    @include for-mx-down {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    &:first-child {
+      padding-left: 0;
+      text-align: left;
+    }
+
+    &:last-child {
+      padding-right: 0;
+
+      @include for-md-down {
+        padding-right: var(--block-padding-side);
+      }
+    }
+
+    &--left {
+      text-align: left;
+    }
+  }
+
+  &__table-head-title {
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--table-border-color);
+    font-weight: 700;
+  }
+
+  &__table-cell {
+    font-weight: 500;
+  }
+
+  &__table-row {
+    border-bottom: 1px solid var(--table-border-color);
+  }
+
+  &__table-cell {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    vertical-align: middle;
+
+    &--green {
+      color: var(--green-color)
+    }
+
+    &--blue {
+      color: var(--blue-color);
+    }
+
+    &--orange {
+      color: var(--orange-color);
+    }
+  }
+
+  &__cell-link {
+    display: flex;
+    align-items: center;
+  }
+
+  &__cell-img {
+    border-radius: var(--border-radius-small);
+    margin-right: 14px;
+    height: 30px;
+  }
+
+  &__cell-name {
+    text-align: left;
+  }
+}

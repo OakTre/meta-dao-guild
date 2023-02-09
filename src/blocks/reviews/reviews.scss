@@ -1,0 +1,123 @@
+@import "src/scss/sizes";
+
+.reviews {
+  @include for-md-up {
+    grid-column: 13 / 25;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+
+    @include for-fl-down {
+      flex-direction: column;
+    }
+  }
+
+  &__estimation-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 30px;
+
+    @include for-fl-down {
+      margin-right: 0;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__estimation-title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  &__estimation-num {
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 1;
+    margin-bottom: 22px;
+  }
+
+  &__estimation-stars-wrapper {
+    display: flex;
+  }
+
+  &__estimation-star {
+    width: 20px;
+    height: 20px;
+    background-image: url("../img/star.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    & + & {
+      margin-left: 10px;
+    }
+  }
+
+  &__details {
+    width: 100%;
+    flex: 1 1 100%;
+  }
+
+  &__detail-wrapper {
+    display: flex;
+    align-items: center;
+
+    & + & {
+      margin-top: 18px;
+    }
+  }
+
+  &__detail-title {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1;
+    text-transform: uppercase;
+    flex: 0 0 120px;
+    width: 120px;
+
+    @include for-mb-down {
+      flex: 0 0 110px;
+      width: 110px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 12px;
+    }
+  }
+
+  &__detail-line-wrapper {
+    width: 100%;
+    flex: 1 1 100%;
+    height: 8px;
+    background-color: var(--purple-dark-background);
+    border-radius: 38px;
+    margin: 0 18px;
+    position: relative;
+    overflow: hidden;
+
+    @include for-hg-down {
+      margin: 0 10px;
+    }
+  }
+
+  &__detail-line {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: radial-gradient(80.2% 129.9% at 96.3% 0%, #C51BFF 0%, rgba(3, 57, 89, 0) 100%), radial-gradient(72.79% 65.22% at 80.51% 92.28%, rgba(68, 220, 255, 0.71) 0%, rgba(120, 199, 217, 0) 84.87%), radial-gradient(66.58% 146.41% at -2.19% 16.98%, #14BDFF 0%, rgba(3, 57, 89, 0) 74.36%), #264BDD;
+    border-radius: 38px;
+  }
+
+  &__detail-num {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+}

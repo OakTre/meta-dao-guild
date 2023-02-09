@@ -1,0 +1,92 @@
+//- Все примеси в этом файле должны начинаться c имени блока (filters)
+
+mixin filters()
+  - const genreCheckboxesArr = ["Action", "Breeding", "Minigame", "MMORPG", "Adventure", "Building", "MOBA", "Shooter", "Arcade", "Card", "M2E", "Sports", "AR", "Collectible", "PVE", "Strategy", "Auto-Battler", "Fighting", "PVP", "VR", "Battle-Royale", "Horror", "Racing", "Other"];
+  - const blockchainCheckboxesArr = [{name: "BSC", icon: "./img/blockchain/bsc.svg"}, {name: "Ethereum", icon: "./img/blockchain/ethereum.svg"}, {name: "Polygon", icon: "./img/blockchain/polygon.svg"}, {name: "immutable X", icon: "./img/blockchain/immutable.svg"}, {name: "Solana", icon: "./img/blockchain/solana.svg"}, {name: "Near", icon: "./img/blockchain/near.svg"}, {name: "Waves", icon: "./img/blockchain/waves.svg"}, {name: "TRON", icon: "./img/blockchain/tron.svg"}, {name: "Gala-Games", icon: "./img/blockchain/gala-games.svg"}, {name: "Avalanche", icon: "./img/blockchain/avalanche.svg"}, {name: "Harmony", icon: "./img/blockchain/harmony.svg"}, {name: "EOS", icon: "./img/blockchain/eos.svg"}, {name: "WAX", icon: "./img/blockchain/max.svg"}, {name: "Other"}];
+  - const deviceCheckboxesArr = ["Web", "iOS", "Android", "PC"];
+  - const statusCheckboxesArr = ["Live", "Alpha", "Beta", "Dev"];
+  - const yesNoArr = ["Yes", "No"];
+
+  .filters.gl-block.gl-block--dark#filters-host
+    .filters__title-wrapper
+      h2.gl-title.gl-title--middle.gl-title--uppercase P2E Games List
+      .gl-subtitle В блоке доступна информация о регистрации партнеров и их приобретении токена MDGG
+
+    .filters__panel-container#toggle-show-container
+      .filters__panel-header
+        .filters__panel-title.gl-mb-hide
+          .filters__panel-lines-wrapper
+            .filters__panel-line
+            .filters__panel-line
+            .filters__panel-line
+          | Filters
+        .filters__header-btns-wrapper
+          button(type="button").filters__btn-reset#filter-btn-reset Reset Filters
+          button(type="button").filters__btn-hide.js-toggle-show-btn
+
+      form.filters__form-container.js-toggle-show-container(data-form)
+        .filters__form-wrapper.js-toggle-show-wrapper
+          .filters__block.filters__block--hg-full
+            .filters__block-title Genre
+            .filters__checkboxes-col-4
+              each checkbox in genreCheckboxesArr
+                label.gl-checkbox-wrapper
+                  input(type="checkbox", name="genre", value=checkbox).gl-checkbox.js-checkbox
+                  span.gl-checkbox-content.gl-checkbox-content--nowrap
+                    span.gl-checkbox-content-mark
+                    span=checkbox
+
+          .filters__block
+            .filters__block-title Blockchain
+            .filters__checkboxes-flex-wrap
+              each checkbox in blockchainCheckboxesArr
+                label.filters__flex.gl-checkbox-full-wrapper
+                  input(type="checkbox", name="blockchain", value=checkbox.name).gl-checkbox-full.js-checkbox
+                  span.gl-checkbox-full-content
+                    if checkbox.icon
+                      img(loading="lazy" src=checkbox.icon alt="image" width="18" height="18").gl-checkbox-full-content-icon
+                    span=checkbox.name
+
+          .filters__block
+            .filters__checkboxes-col-2-wrapper
+              div
+                .filters__block-title Device
+                .filters__checkboxes-col-1
+                  each checkbox in deviceCheckboxesArr
+                    label.gl-checkbox-wrapper
+                      input(type="checkbox", name="device", value=checkbox).gl-checkbox.js-checkbox
+                      span.gl-checkbox-content.gl-checkbox-content--nowrap
+                        span.gl-checkbox-content-mark
+                        span=checkbox
+
+              div
+                .filters__block-title Status
+                .filters__checkboxes-col-1
+                  each checkbox in statusCheckboxesArr
+                    label.gl-checkbox-wrapper
+                      input(type="checkbox", name="status", value=checkbox).gl-checkbox.js-checkbox
+                      span.gl-checkbox-content.gl-checkbox-content--nowrap
+                        span.gl-checkbox-content-mark
+                        span=checkbox
+
+              div
+                .filters__block-title Free to play
+                .filters__checkboxes-col-2-small
+                  each checkbox in yesNoArr
+                    label.gl-checkbox-wrapper
+                      input(type="checkbox", name="freeToPlay", value=checkbox data-exclusive).gl-checkbox.js-checkbox
+                      span.gl-checkbox-content.gl-checkbox-content--nowrap
+                        span.gl-checkbox-content-mark
+                        span=checkbox
+
+              div
+                .filters__block-title Scholarship
+                .filters__checkboxes-col-2-small
+                  each checkbox in yesNoArr
+                    label.gl-checkbox-wrapper
+                      input(type="checkbox", name="scholarship", value=checkbox data-exclusive).gl-checkbox.js-checkbox
+                      span.gl-checkbox-content.gl-checkbox-content--nowrap
+                        span.gl-checkbox-content-mark
+                        span=checkbox
+
+    +games-list()

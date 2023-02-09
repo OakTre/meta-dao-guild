@@ -1,0 +1,24 @@
+//- Все примеси в этом файле должны начинаться c имени блока (similar-games)
+
+mixin similar-games()
+  - const linksWrapper = [{imgName: "img/data-jpegs/similar-games/1", title: "The Walking Dead Empires", href: ""}, {imgName: "img/data-jpegs/similar-games/1", title: "The Walking Dead Empires", href: ""}, {imgName: "img/data-jpegs/similar-games/1", title: "The Walking Dead Empires", href: ""}, {imgName: "img/data-jpegs/similar-games/1", title: "The Walking Dead Empires", href: ""}, {imgName: "img/data-jpegs/similar-games/1", title: "The Walking Dead Empires", href: ""}, {imgName: "img/data-jpegs/similar-games/1", title: "The Walking Dead Empires", href: ""}];
+
+  .similar-games.gl-block.gl-block--grey#similar-games-host
+    .similar-games__header
+      h2.gl-title Similar Games
+      .gl-subtitle Gamers who play <a class="gl-link gl-purple-color">Thetan Arena</a> are also playing these games:
+
+    .similar-games__content
+      .similar-games__swiper-container.gl-swiper.swiper-container#js-swiper-container
+        .gl-swiper__swiper-wrapper.swiper-wrapper
+          each link in linksWrapper
+            .similar-games__swiper-slide.swiper-slide
+              a(href=link.href).similar-games__swiper-link
+                picture
+                  source(srcset=`${ link.imgName }.webp`, type="image/webp")
+                  img(loading="lazy" src=`${ link.imgName }.jpg`, alt="image" width="232" height="200").similar-games__swiper-image
+                .similar-games__title= link.title
+
+      .similar-games__swiper-btns-wrapper
+        button.gl-swiper__btn-nav.gl-swiper__btn-nav--prev#js-btn-prev
+        button.gl-swiper__btn-nav.gl-swiper__btn-nav--next#js-btn-next

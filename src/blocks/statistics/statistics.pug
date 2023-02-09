@@ -1,0 +1,56 @@
+//- Все примеси в этом файле должны начинаться c имени блока (statistics)
+
+mixin statistics(index, isRight, title, subtitle, tableTitles, partnersArr)
+  - const test = [1, 2, 3];
+
+  .statistics(class=isRight && "statistics--right", id=`statistics-host-${ index }`).gl-block.gl-block--gradient
+    .statistics__header
+      div
+        h2.gl-title.gl-title--middle.gl-title--uppercase= title
+        .gl-subtitle.gl-subtitle--big= subtitle
+
+      a(href="").statistics__more-link more
+
+    .swiper.gl-swiper.swiper-container#js-swiper-container
+      .statistics__swiper-wrapper.gl-swiper__swiper-wrapper.swiper-wrapper
+        each item in test
+          .swiper-slide.js-swiper-slide.overlayscrollbars
+            table.statistics__table-container
+              thead.statistics__table-head
+                tr.statistics__table-row
+                  each title in tableTitles
+                    th.statistics__table-head-title=title
+
+              tbody.statistics__table-body-wrapper
+                each partner in partnersArr
+                  tr.statistics__table-row
+                    td(align="center").statistics__table-cell
+                      a(href="").statistics__cell-link
+                        picture
+                          source(srcset=`${ partner.iconName }.webp`, type="image/webp")
+                          img(loading="lazy" src=`${ partner.iconName }.png`, alt="image" width="30" height="30").statistics__cell-img
+                        .statistics__cell-name= partner.name
+                    td(
+                      class=partner.cell2 === 'Live' && 'statistics__table-cell--green'
+                      class=partner.cell2 === 'Dev.' && 'statistics__table-cell--blue'
+                      class=partner.cell2 === 'Presale' && 'statistics__table-cell--orange'
+                    ).statistics__table-cell= partner.cell2
+                    td.statistics__table-cell= partner.cell3
+                    td.statistics__table-cell= partner.cell4
+                    if !partner.rewards
+                      td.statistics__table-cell.statistics__table-cell--left
+                        form.gl-subscribe-form
+                          label.gl-subscribe-input-wrapper
+                            input(
+                              type="checkbox",
+                              name="subscribe",
+                              checked=partner.isSubscribe
+                            ).gl-subscribe-input
+                            .gl-subscribe-input-content
+                    if partner.rewards
+                      td.statistics__table-cell= partner.rewards
+
+      .gl-swiper__pagination-wrapper
+        button.gl-swiper__pagination-btn-nav.gl-swiper__pagination-btn-nav--prev#js-btn-prev
+        .reviews-list__swiper-pagination.gl-swiper__pagination.swiper-pagination#js-pagination-slider
+        button.gl-swiper__pagination-btn-nav.gl-swiper__pagination-btn-nav--next#js-btn-next

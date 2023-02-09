@@ -1,0 +1,70 @@
+@import "src/scss/cosmic";
+
+.login {
+  font-family: 'GothamPro', sans-serif;
+
+  &__layout-spacer {
+    margin: auto auto 0;
+  }
+
+  &__social {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &__social-links {
+    padding-top: 18px;
+    display: flex;
+    gap: 26px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__discord-link {
+    width: 34px;
+    height: 34px;
+    background: url("/img/social/discord-filled-white.svg") no-repeat;
+    background-size: contain;
+  }
+  &__google-link {
+    width: 27px;
+    height: 26px;
+    background: url("/img/social/google-filled-white.svg") no-repeat;
+    background-size: contain;
+  }
+
+  &__separator {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    padding-bottom: 4px;
+  }
+
+  &__main-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__forgot-password {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: right;
+  }
+
+  &__submit-btn {
+    display: inline-block;
+    text-transform: uppercase;
+    padding: 16px 32px;
+    background: radial-gradient(66.58% 146.41% at -2.19% 16.98%, #14BDFF 0%, rgba(3, 57, 89, 0) 74.36%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, radial-gradient(80.2% 129.9% at 96.3% 0%, #C51BFF 0%, rgba(3, 57, 89, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, radial-gradient(72.79% 65.22% at 80.51% 92.28%, rgba(68, 220, 255, 0.71) 0%, rgba(120, 199, 217, 0) 84.87%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, #3042FF;
+    box-shadow: 0 0 20px rgba(23, 142, 228, 0.64);
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

@@ -1,0 +1,20 @@
+//- Все примеси в этом файле должны начинаться c имени блока (more-articles)
+
+mixin more-articles()
+  - const list = [{date: "Mart 10, 2022", title: "Guild Accelerator Program", text: "All Heros have two different Level attributes, the Hero Level and the in-game Hero Level. Hero Level represents", imgName: "img/data-jpegs/guild-accelerator-program"}, {date: "Mart 10, 2022", title: "Guild Accelerator Program", text: "All Heros have two different Level attributes, the Hero Level and the in-game Hero Level. Hero Level represents", imgName: "img/data-jpegs/guild-accelerator-program"}, {date: "Mart 10, 2022", title: "Guild Accelerator Program", text: "All Heros have two different Level attributes, the Hero Level and the in-game Hero Level. Hero Level represents", imgName: "img/data-jpegs/guild-accelerator-program"}, {date: "Mart 10, 2022", title: "Guild Accelerator Program", text: "All Heros have two different Level attributes, the Hero Level and the in-game Hero Level. Hero Level represents", imgName: "img/data-jpegs/guild-accelerator-program"}, {date: "Mart 10, 2022", title: "Guild Accelerator Program", text: "All Heros have two different Level attributes, the Hero Level and the in-game Hero Level. Hero Level represents", imgName: "img/data-jpegs/guild-accelerator-program"}];
+
+  .more-articles.gl-block
+    .more-articles__header-wrapper
+      h2.gl-title.gl-title--small More articles
+      .gl-subtitle Latest news and game updates
+
+    ul.more-articles__list-wrapper
+      each item in list
+        li.more-articles__item-wrapper
+          .more-articles__item-info
+            .more-articles__item-date= item.date
+            .more-articles__item-title= item.title
+            .more-articles__item-text= item.text
+          picture
+            source(srcset=`${ item.imgName }.webp`, type="image/webp")
+            img(loading="lazy" src=`${ item.imgName }.jpg`, alt="image" width="70" height="70").more-articles__item-img

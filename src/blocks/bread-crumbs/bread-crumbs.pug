@@ -1,0 +1,13 @@
+//- Все примеси в этом файле должны начинаться c имени блока (bread-crumbs)
+
+mixin bread-crumbs(itemsArr)
+
+  .bread-crumbs
+    .gl-page-content
+      ul.bread-crumbs__container
+        each item in itemsArr
+          li
+            if item.href
+              a(href=item.href).bread-crumbs__item.bread-crumbs__item--link= item.text
+            else
+              .bread-crumbs__item= item.text

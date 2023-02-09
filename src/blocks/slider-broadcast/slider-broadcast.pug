@@ -1,0 +1,28 @@
+//- Все примеси в этом файле должны начинаться c имени блока (slider-broadcast)
+
+mixin slider-broadcast()
+  - const linksWrapper = [{isDev: true, logo1: true}, {isLive: true, logo2: true}, {isDev: true, logo2: true}];
+
+  .slider-broadcast#slider-broadcast-host
+    .slider-broadcast__content
+      .slider-broadcast__swiper-container.gl-swiper.swiper-container(data-swiper-container)
+        .gl-swiper__swiper-wrapper.swiper-wrapper
+          each link, index in linksWrapper
+            .slider-broadcast__swiper-slide.swiper-slide
+              a(href="").slider-broadcast__swiper-link
+                if link.logo1
+                  img(loading="lazy" src='img/logos/logo-1.svg' alt="image" width="26" height="26").slider-broadcast__slide-logo
+                if link.logo2
+                  img(loading="lazy" src='img/logos/logo-2.svg' alt="image" width="26" height="26").slider-broadcast__slide-logo
+                if link.isDev
+                  .slider-broadcast__slide-mark.slider-broadcast__slide-mark--blue Dev.
+                if link.isLive
+                  .slider-broadcast__slide-mark.slider-broadcast__slide-mark--green Live
+                picture
+                  source(srcset=`img/data-jpegs/slider-broadcast/${index + 1}.webp`, type="image/webp")
+                  img(loading="lazy" src=`img/data-jpegs/slider-broadcast/${index + 1}.jpg`, alt="image" width="413" height="190").slider-broadcast__swiper-image
+
+      .slider-broadcast__swiper-btns-wrapper
+        button.gl-swiper__btn-nav.gl-swiper__btn-nav--prev(data-btn-prev)
+        button.gl-swiper__btn-nav.gl-swiper__btn-nav--next(data-btn-next)
+

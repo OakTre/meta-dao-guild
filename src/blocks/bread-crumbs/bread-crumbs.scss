@@ -1,0 +1,59 @@
+@import "src/scss/sizes";
+
+.bread-crumbs {
+  &__container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: -6px -10px;
+  }
+
+  &__item {
+    display: block;
+    padding: 6px 20px 6px 10px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    text-transform: uppercase;
+    position: relative;
+    white-space: nowrap;
+    transition: color var(--transition-duration-short);
+    color: var(--gray-color-opasity-2);
+
+    &--link {
+      color: var(--white-color);
+      &:hover {
+        color: var(--purple-color);
+
+        &:before {
+          opacity: 0;
+        }
+
+        &:after {
+          opacity: 1;
+        }
+      }
+
+      &:before, &:after {
+        position: absolute;
+        content: '';
+        top: 50%;
+        right: 0;
+        width: 10px;
+        height: 6px;
+        transform: translateY(-50%) rotate(-90deg);
+        transition: opacity var(--transition-duration-short);
+      }
+
+      &:before {
+        background-image: url("../img/arrow-wite.svg");
+        opacity: 1;
+      }
+
+      &:after {
+        background-image: url("../img/arrow-purple.svg");
+        opacity: 0;
+      }
+    }
+  }
+}

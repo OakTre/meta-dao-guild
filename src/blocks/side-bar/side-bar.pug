@@ -1,0 +1,23 @@
+//- Все примеси в этом файле должны начинаться c имени блока (side-bar)
+
+mixin side-bar()
+  - const navLinkList = [{text: "guild", link: "/", isMark: true}, {text: "games", link: "/games.html"}, {text: "nft", link: "", isDisabled: true}, {text: "airdrop", link: "", isDisabled: true}];
+  - const socialLinksArr = [{modClass: "twitter", href: ""}, {modClass: "telegram", href: ""}, {modClass: "discord", href: ""}, {modClass: "youtube", href: ""}, {modClass: "medium", href: ""}];
+
+  .side-bar#side-bar
+    button(type="button")#side-bar-close-btn.side-bar__close-btn
+      img(loading="lazy" src="img/close.svg" alt="close" width="20" height="20").side-bar__img
+
+    button(type="button").side-bar__btn.side-bar__btn--blue connect wallet
+
+    nav.side-bar__links-wrapper
+      each navLink in navLinkList
+        a(href=navLink.link, disabled=navLink.isDisabled, class=navLink.isMark && 'side-bar__link--mark').side-bar__link= navLink.text
+
+    .side-bar__login-links-wrapper
+      a(href="/login-block.html").side-bar__login-link Log in
+      a(href="/signup.html").side-bar__login-link Sign up
+
+    .side-bar__social
+      each socialLinkItem in socialLinksArr
+        a(href=socialLinkItem.href, class=`side-bar__social-link--${ socialLinkItem.modClass }`).side-bar__social-link

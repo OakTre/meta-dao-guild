@@ -1,0 +1,24 @@
+//- Все примеси в этом файле должны начинаться c имени блока (last-news)
+
+mixin last-news()
+  - const linksWrapper = [{imgName: "img/data-jpegs/last-news/1", href: "", caption: "Sky Mavis Drops Axie Infinity: Origins Season 1 Launch Date at AxieCon"}, {imgName: "img/data-jpegs/last-news/1", href: "", caption: "Sky Mavis Drops Axie Infinity: Origins Season 1 Launch Date at AxieCon"}, {imgName: "img/data-jpegs/last-news/2", href: "", caption: "Afterland to go live in alpha on September 12"}, {imgName: "img/data-jpegs/last-news/3", href: "", caption: "Participate in Undead Blocks Free P2E Tournament and win $50,000"}];
+
+  .last-news.gl-block.gl-block--grey#last-news-host
+    .last-news__header
+      h2.gl-title Last News
+      .gl-subtitle Gamers who play <a class="gl-link gl-purple-color">Thetan Arena</a> are also playing these games:
+
+    .last-news__content
+      .last-news__swiper-container.gl-swiper.swiper-container#js-swiper-container
+        .gl-swiper__swiper-wrapper.swiper-wrapper
+          each link in linksWrapper
+            .last-news__swiper-slide.swiper-slide
+              a(href=link.href).last-news__swiper-link
+                picture
+                  source(srcset=`${ link.imgName }.webp`, type="image/webp")
+                  img(loading="lazy" src=`${ link.imgName }.jpg`, alt="image" width="400" height="256").last-news__swiper-image
+                .last-news__swiper-caption= link.caption
+
+        .last-news__swiper-btns-wrapper
+          button.gl-swiper__btn-nav.gl-swiper__btn-nav--prev#js-btn-prev
+          button.gl-swiper__btn-nav.gl-swiper__btn-nav--next#js-btn-next

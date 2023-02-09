@@ -1,0 +1,39 @@
+//- Все примеси в этом файле должны начинаться c имени блока (footer)
+
+mixin footer()
+  - const linksArr = [{text: "whitepaper", href: ""}, {text: "Meta rent", href: ""}, {text: "scoolarship", href: ""}, {text: "mogg token", href: ""}, {text: "team", href: ""}];
+  - const socialLinksArr = [{modClass: "twitter", href: ""}, {modClass: "telegram", href: ""}, {modClass: "discord", href: ""}, {modClass: "youtube", href: ""}, {modClass: "medium", href: ""}];
+
+  footer.footer
+    .footer__page-content.gl-page-content
+      .footer__content
+        nav.footer__links-container
+          each linkItem in linksArr
+            a(href=linkItem.href).footer__link= linkItem.text
+
+        .footer__logo-link-container
+          a(href="/").footer__logo-link
+            picture
+              source(srcset="img/logo-footer.webp", type="image/webp")
+              img(loading="lazy" src="img/logo-footer.svg", alt="logo-footer" width="222" height="110").footer__logo
+
+        .footer__right-block
+          .footer__social-container
+            each socialLinkItem in socialLinksArr
+              a(href=socialLinkItem.href, class=`footer__social-link--${socialLinkItem.modClass}`).footer__social-link
+
+          // переключатель языка
+          //.gl-fl-hide
+          //  +lang-select()
+
+          .footer__btns-wrapper
+            a(href="/login-block.html").footer__btn Log in
+            a(href="/signup.html").footer__btn Sign up
+
+    .footer__info
+      span Contact email for partnership:
+      a.footer__info-link(href="mailto:pr@metadao.gg") pr@metadao.gg
+      br
+      span Support:
+      a.footer__info-link(href="mailto:support@metadao.gg") support@metadao.gg
+

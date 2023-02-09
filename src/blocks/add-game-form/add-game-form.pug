@@ -1,0 +1,271 @@
+//- Все примеси в этом файле должны начинаться c имени блока (add-game-form)
+
+mixin add-game-form()
+  -
+    form_inputs = [
+      { label: 'E-mail', inptName: "email", type: "email", inptPlaceholder: 'Your e-mail address' },
+      { label: 'What is the name of the game?*', maxLength: true, req: true, inptName: "game_name", type: "text", inptPlaceholder: 'Answer' },
+      { label: 'A brief description of the game*', req: true, inptName: "brief", textarea: true, inptPlaceholder: 'Answer' },
+      {
+        label: 'Date of the release of the game*',
+        req: true,
+        date: true,
+        inptName: "date",
+        dateText: 'Indicate the date of the start of the game or if the game is in the development, then the planned release date',
+        inptPlaceholder: 'Select date'
+      },
+      { label: 'Your Website*', req: true, inptName: "website", type: "url", inptPlaceholder: 'Answer' },
+      { label: 'Your Twitter', inptName: "twitter", type: "text", inptPlaceholder: 'Answer' },
+      { label: 'Your Discord', inptName: "discord", type: "text", inptPlaceholder: 'Answer' },
+      { label: 'Your Telegram', inptName: "telegram", type: "text", inptPlaceholder: 'Answer' },
+      { label: 'Your Facebook', inptName: "facebook", type: "text", inptPlaceholder: 'Answer' },
+      { label: 'Your YouTube', inptName: "youTube", type: "text", inptPlaceholder: 'Answer' },
+      {
+        label: 'Add the game logo*',
+        file: true,
+        req: true,
+        inptName: "game_logo",
+        fileText: 'The size of the logo is 100x100px and not more than 1 MB in the PNG format',
+        inptPlaceholder: 'Add logo'
+      },
+    ]
+
+  -
+    legends_labels = [
+      'Information', 'Genre', 'Blockchain', 'Device', 'Status',
+      'F2P and Scholarship', 'Screenshots', 'Review',
+      'Information2', 'Referral Program'
+    ]
+
+  -
+    genre_checks = [
+      'Action', 'Minigame', 'Adventure', 'MOBA',
+      'Arcade', 'M2E', 'AR', 'PVE',
+      'Auto-Battler', 'PVP', 'Battle-Royale', 'Racing',
+      'Breeding', 'MMORPG', 'Building', 'Shooter',
+      'Card', 'Sports', 'Collectible', 'Strategy',
+      'Fighting', 'VR', 'Horror', 'Other',
+    ]
+
+  -
+    blockchain_checks = [
+      'BSC', 'TRON', 'Ethereum', 'Gala-Games',
+      'Polygon', 'Avalanche', 'Immutable X', 'Harmony',
+      'Solana', 'EOS', 'Near', 'WAX',
+      'Waves', 'Other',
+    ]
+
+  -
+    device_checks = [
+      'Web', 'iOS', 'Android', 'PC'
+    ]
+
+  -
+    status_checks = [
+      'Live', 'Alpha', 'Beta', 'Development'
+    ]
+
+  - ftp_checks = [ 'Yes', 'No']
+
+  -
+    review_inpts = [
+      { label: 'Add text review to the game*', inptName: "review_to_game", req: true, labelText: 'A review of the game should consist of 3 000-10 000 characters', textarea: true, inptPlaceholder: 'Answer' },
+      { label: 'Add a link to YouTube to a game review*', type: 'url', inptName: "youtube_link", req: true, labelText: 'It can be a game trailer, your video review or other high quality video review from bloggers', inptPlaceholder: 'Answer' },
+      { label: 'Add Pitch (if any)', inptPlaceholder: 'Answer' },
+      { label: 'Add the White Paper (if any)', inptPlaceholder: 'Answer' },
+    ]
+
+  -
+    infos_inpts = [
+      { label: 'Indicate smart contract of the token that is used in the game', inptPlaceholder: 'Answer' },
+      { label: 'Indicate the Token ticker', inptPlaceholder: 'Answer' },
+      { label: 'What is the minimum entrance to the game (USDT)?', inptPlaceholder: 'Answer' },
+      { label: 'What is the minimum earnings in the game per day (USDT)?', inptPlaceholder: 'Answer' }
+    ]
+
+  section.game-form-container
+    form.add-game-form.js-add-game-form(action='./', enctype='multipart/form-data', data-need-validation)
+      //- для дев разработки
+      //- input(type='hidden', class='js-current-step', name='step', value='9')
+      //- input(type='hidden', class='js-current-group', name='current_group', value=legends_labels[9])
+      h2.add-game-form__heading Add game
+      ul.add-game-form__headings
+        for label, i in legends_labels
+          - activeClass = i === 0 ? 'is-visible' : ''
+          li.add-game-form__headings-item.add-game-form__legend.js-heading-form(class=activeClass)= label
+      ul.add-game-form__steps
+        - num = 0
+        each i in Array.from(Array(10).keys())
+          li.add-game-form__step-item
+            - num++
+            button.add-game-form__step-btn.js-step-btn(class={'is-filled': i === 0}, data-step-label=legends_labels[i], data-step=i, type='button')
+              span.gl-visually-hidden Step #{num}
+
+      .game-form.game-form-step.is-visible
+        for inpt in form_inputs
+          - reqClass = inpt.req ? 'true' : 'false'
+          if inpt.textarea
+            label.game-form__input.js-validate-container
+              span.game-form__input-label= inpt.label
+              .gl-controls-count-wrapper(data-count='0/150')
+                textarea(class='gl-textarea js-length-count', name=inpt.inptName, data-parsley-maxlength='150', data-parsley-required='123', data-parsley-group=legends_labels[0], placeholder= inpt.inptPlaceholder)
+          else if inpt.date
+            span.game-form__input-label= inpt.label
+            span.game-form__text= inpt.dateText
+            .game-form__input.game-form__input--small.game-form__input--iconed.js-validate-container
+              input(type='text', name=inpt.inptName, data-parsley-required=reqClass, data-parsley-date, data-parsley-group=legends_labels[0], class='gl-input js-date-inpt', placeholder= inpt.inptPlaceholder)
+          else if inpt.file
+            span.game-form__input-label= inpt.label
+            span.game-form__text= inpt.fileText
+            label.gl-input-file.game-form__input-file.js-file-upload.js-validate-container
+              input(type='file', name=inpt.inptName, data-parsley-file-type-png='', data-parsley-max-file-size='1', data-parsley-required=reqClass, data-parsley-group=legends_labels[0], class='gl-visually-hidden', placeholder= inpt.inptPlaceholder)
+              span.gl-input-file__text.js-file-upload-text(data-text=inpt.inptPlaceholder)= inpt.inptPlaceholder
+          else if inpt.maxLength
+            label.game-form__input.js-validate-container
+              span.game-form__input-label= inpt.label
+              .gl-controls-count-wrapper(data-count='0/30')
+                input(type='text', name=inpt.inptName, data-parsley-required=reqClass, data-parsley-maxlength='30', data-parsley-group=legends_labels[0], class='gl-input js-length-count', placeholder= inpt.inptPlaceholder)
+          else
+            label.game-form__input.js-validate-container
+              span.game-form__input-label= inpt.label
+              input(type='text', name=inpt.inptName, data-parsley-type=inpt.type, data-parsley-required=reqClass, data-parsley-group=legends_labels[0], class='gl-input', placeholder= inpt.inptPlaceholder)
+
+      .game-form.game-form-step.js-validate-container
+        input(type='text', name='genre', class='gl-visually-hidden js-real-inpt', data-parsley-group=legends_labels[1], data-parsley-required, value='')
+        span.game-form__input-label What is the genre of the game?*
+        span.game-form__text
+          | Select a maximum of three genres from the list
+        ul.game-form__checkbox-container
+          for check in genre_checks
+            li.game-form__checkbox-item
+              label.gl-checkbox-arrow
+                input(type='checkbox', class='gl-visually-hidden gl-checkbox-arrow__control js-check-genre', data-parsley-required='false', value=check)
+                span.gl-checkbox-arrow__text= check
+
+      .game-form.game-form-step.js-validate-container
+        input(type='text', name='blockchain', class='gl-visually-hidden js-real-inpt', data-parsley-group=legends_labels[2], data-parsley-required, value='')
+        span.game-form__input-label What blockchain is your game made on?*
+        span.game-form__text
+          | Select a maximum of three genres from the list
+        ul.game-form__checkbox-container
+          for check in blockchain_checks
+            li.game-form__checkbox-item
+              label.gl-checkbox-arrow
+                input(type='checkbox', class='gl-visually-hidden js-check-blockchain gl-checkbox-arrow__control', data-parsley-required='false', value=check)
+                span.gl-checkbox-arrow__text= check
+
+      .game-form.game-form-step.js-validate-container
+        input(type='text', name='device', class='gl-visually-hidden js-real-inpt', data-parsley-group=legends_labels[3], data-parsley-required, value='')
+        span.game-form__input-label What device can users play the game on?*
+        span.game-form__text
+          | If the game is still in development, indicate which devices will be accessible to the game.
+        ul.game-form__checkbox-container
+          for check in device_checks
+            li.game-form__checkbox-item.game-form__checkbox-item--full
+              label.gl-checkbox-arrow
+                input(type='checkbox', class='gl-visually-hidden js-check-device gl-checkbox-arrow__control', data-parsley-required='false', value=check)
+                span.gl-checkbox-arrow__text= check
+
+      .game-form.game-form-step
+        span.game-form__input-label What is the status of the game now?*
+        ul.game-form__checkbox-container.js-validate-container
+          for check in status_checks
+            li.game-form__checkbox-item.game-form__checkbox-item--full
+              label.gl-checkbox-arrow
+                input(type='radio', name='status', data-parsley-group=legends_labels[4], data-parsley-required, class='gl-visually-hidden gl-checkbox-arrow__control', value=check)
+                span.gl-checkbox-arrow__text= check
+
+      .game-form.game-form-step
+        span.game-form__input-label Can a user play this game for free?*
+        ul.game-form__checkbox-container.js-validate-container
+          for check in ftp_checks
+            li.game-form__checkbox-item.game-form__checkbox-item--full
+              label.gl-checkbox-arrow.gl-checkbox-arrow--rounded
+                input(type='radio', name='free_play', data-parsley-group=legends_labels[5], data-parsley-required, class='gl-visually-hidden gl-checkbox-arrow__control', value=check)
+                span.gl-checkbox-arrow__text= check
+
+        span.game-form__input-label Do you have Scholarship mechanics?*
+        ul.game-form__checkbox-container.js-validate-container
+          for check in ftp_checks
+            li.game-form__checkbox-item.game-form__checkbox-item--full
+              label.gl-checkbox-arrow.gl-checkbox-arrow--rounded
+                input(type='radio', name='scholarship_mechanics', data-parsley-group=legends_labels[5], data-parsley-required, class='gl-visually-hidden gl-checkbox-arrow__control', value=check)
+                span.gl-checkbox-arrow__text= check
+
+      .game-form.game-form-step
+        span.game-form__input-label Download the screenshots of the game*
+        span.game-form__text
+          | You need to add at least 4 screenshots (1920x1080px) from the game to display the game mechanics for the user
+
+        .js-file-upload.js-validate-container
+          input(type='file', multiple, name='screenshots[]', id='fileInput', data-parsley-file-type-images, data-parsley-multiple-of='4', data-parsley-required, data-parsley-group=legends_labels[6], class='gl-visually-hidden')
+          label.game-form__file-label(for='fileInput')
+            .gl-input-file.game-form__input-file
+              span.gl-input-file__text.js-file-upload-text(data-text='Add file') Add file
+            .game-form__files-container
+
+
+
+
+      .game-form.game-form-step
+        for inpt in review_inpts
+          - reqClass = inpt.req ? 'true' : 'false'
+          if (inpt.textarea)
+            label.game-form__input.js-validate-container
+              span.game-form__input-label= inpt.label
+              span.game-form__text= inpt.labelText
+              .gl-controls-count-wrapper(data-count='0/10000')
+                textarea(class='gl-textarea js-length-count', data-parsley-minlength='3000', data-parsley-maxlength='10000', data-parsley-required=reqClass, data-parsley-group=legends_labels[7], name=inpt.inptName, placeholder= inpt.inptPlaceholder)
+          else
+            label.game-form__input.js-validate-container
+              span.game-form__input-label= inpt.label
+              if inpt.labelText
+                span.game-form__text= inpt.labelText
+              input(type=`${inpt.type ? inpt.type : 'text'}`, name=inpt.inptName, data-parsley-required=reqClass, data-parsley-group=legends_labels[7], class='gl-input', placeholder= inpt.inptPlaceholder)
+
+      .game-form.game-form-step
+        for inpt in infos_inpts
+          label.game-form__input
+            span.game-form__input-label= inpt.label
+            input(type='text', name=inpt.inptName, class='gl-input', placeholder= inpt.inptPlaceholder)
+
+
+      .game-form.game-form-step
+        span.game-form__input-label Do you have a referral program?*
+        ul.game-form__checkbox-container.game-form__checkbox-container--mb36.js-validate-container
+          li.game-form__checkbox-item.game-form__checkbox-item--full
+            label.gl-checkbox-arrow.gl-checkbox-arrow--rounded
+              input(type='radio', name='referral_program', data-parsley-required, class='gl-visually-hidden gl-checkbox-arrow__control', value='yes')
+              span.gl-checkbox-arrow__text Yes
+          li.game-form__checkbox-item.game-form__checkbox-item--full
+            label.gl-checkbox-arrow.gl-checkbox-arrow--rounded
+              input(type='radio', name='referral_program', data-parsley-required, class='gl-visually-hidden gl-checkbox-arrow__control', value='No')
+              span.gl-checkbox-arrow__text No
+
+        label.game-form__input
+          span.game-form__input-label Add the link describing the referral program (if any)
+          input(type='url', data-parsley-type='url', data-parsley-group=legends_labels[9], name='referral_program_link', class='gl-input', placeholder='Answer')
+
+
+      .game-form__btns-group
+        button.game-form__btn-back.gl-btn-third(type='button', class='js-prev-btn is-hidden') back
+        button.game-form__btn.gl-btn(type='button', class='js-next-btn', data-current-group=legends_labels[0]) Next
+        button.game-form__btn.game-form__btn-submit.gl-btn(class='js-sumbit-btn') Send
+
+
+  .game-form-modal.js-succes-modal
+    .game-form-modal__inner
+      button.game-form-modal__btn-close.js-close-modal
+        span.gl-visually-hidden close modal
+
+      img(src='img/checkmark-circle.svg', alt='', class='game-form-modal__img')
+      .game-form-modal__heading Form was successfully sent!
+      .game-form-modal__text The game will be added after checking by the manager
+
+  .game-form-modal.js-error-modal
+    .game-form-modal__inner
+      button.game-form-modal__btn-close.js-close-modal
+        span.gl-visually-hidden close modal
+
+      img(src='img/error-circle.svg', alt='', class='game-form-modal__img')
+      .game-form-modal__heading Something went wrong. Check the form fields and try again.

@@ -1,0 +1,41 @@
+//- Все примеси в этом файле должны начинаться c имени блока (social)
+
+mixin social()
+  - const tabs = [{value: "twitter", text: "Twitter", isChecked: true}, {value: "youtube", text: "Youtube"}];
+  - const twitterPlug = [null, null, null];
+  - const youtubePlug = [null, null, null];
+
+  .social.custom-simplebar#social-host
+    .custom-simplebar__container.gl-block.gl-block--grey
+      .custom-simplebar__wrapper.overlayscrollbars
+        h2.social__title.gl-title Social
+
+        .social__content
+          .social__tabs-wrapper
+            each tab in tabs
+              label.social__tab-wrapper
+                input(type="radio", name="social-tab", value=tab.value, checked=tab.isChecked).social__tab.js-tab
+                .social__tab-content= tab.text
+
+          ul(data-value="twitter").social__posts-list.js-content
+            each post in twitterPlug
+              li.social__post-item.social__post-item--twitter
+                // вместо img вставить пост с twitter
+                blockquote(data-theme="dark").twitter-tweet
+                  p(lang="en", dir="ltr") A brand new feature will be called Marketplace Quest<br><br>Completing quests on the marketplace will grand users the ultimate chance to acquire an NFT hero and other valuable items<br><br>📅 From July 22th<br><br>Find out more about Marketplace Quest<br>👉
+                    a(href="https://t.co/TL1uIBEB58\">https://t.co/TL1uIBEB58") July 18, 2022
+                    div &mdash; Thetan Arena (@ThetanArena)
+                  a(href="https://twitter.com/ThetanArena/status/1549001045522534400?ref_src=twsrc%5Etfw") July 18, 2022
+                script(async, src="https://platform.twitter.com/widgets.js", charset="utf-8")
+
+          ul(data-value="youtube").social__posts-list.js-content
+            each post in youtubePlug
+              li.social__post-item.social__post-item--youtube
+                iframe(
+                  data-src="https://www.youtube.com/embed/tOUDd8NPgiY",
+                  title="YouTube video player",
+                  class="lazyload"
+                  frameborder="0",
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
+                  allowfullscreen
+                  )

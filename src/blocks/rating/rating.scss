@@ -1,0 +1,34 @@
+.rating {
+  height: 20px;
+
+  &__content {
+    height: 100%;
+    position: relative;
+    width: 140px;
+  }
+
+  &__image {
+    position: absolute;
+    z-index: 2;
+  }
+
+  &__stars {
+    clip-path: url(#svgPath);
+    height: 100%;
+    width: 100%;
+  }
+
+  &__progress {
+    background: radial-gradient(80.2% 129.9% at 96.3% 0%, #C51BFF 0%, rgba(3, 57, 89, 0) 100%), radial-gradient(72.79% 65.22% at 80.51% 92.28%, rgba(68, 220, 255, 0.71) 0%, rgba(120, 199, 217, 0) 84.87%), radial-gradient(66.58% 146.41% at -2.19% 16.98%, #14BDFF 0%, rgba(3, 57, 89, 0) 74.36%), #264BDD;
+    background-size: 30px 20px;
+    height: 100%;
+    transform: translateX(2px);
+    /*
+      1 = 5-25
+      2 = 35-55
+      3 = 65-85
+      4 = 95-115
+      5 = 125-145
+    */
+  }
+}

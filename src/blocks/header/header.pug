@@ -1,0 +1,30 @@
+//- Все примеси в этом файле должны начинаться c имени блока (header)
+
+mixin header(linkName)
+  - const navLinkList = [{text: "guild", link: "https://metadao.gg"}, {text: "games", link: "/games.html"}, {text: "nft", link: "", isDisabled: true}, {text: "airdrop", link: "", isDisabled: true}, {text: "news", link: "", isDisabled: true}];
+
+  header.header#header-host
+    .gl-page-content
+      .header__content-wrapper
+        .header__nav-links-wrapper.gl-hg-hide
+          each navLink in navLinkList
+            a(href=navLink.link, class= linkName === navLink.text && "header__nav-link--active", class= navLink.text === "guild" && "header__nav-link--guild", disabled=navLink.isDisabled).header__nav-link= navLink.text
+
+        a(href="/").header__logo-link
+          img(loading="lazy" src="img/logo.svg", alt="logo-header" width="220" height="110").header__logo
+
+        .header__btns-login-wrapper
+          a(href="/login-block.html").header__btn.gl-hg-hide Log in
+          a(href="/signup.html").header__btn.gl-hg-hide Sign up
+          a(href="/login-block.html").header__btn.gl-hg-show
+            img(loading="lazy" src="img/profile.svg", alt="login-block-icon" width="20" height="20").header__login-icon
+
+        .header__btn-connect-wrapper.gl-hg-hide
+          button(type="button").header__btn.header__btn--blue connect wallet
+
+        // языковой селект
+        //.header__lang-wrapper
+        //  +lang-select()
+
+        .header__burger-btn-wrapper.gl-hg-show
+          button(type="button")#btn-burger.header__burger-btn

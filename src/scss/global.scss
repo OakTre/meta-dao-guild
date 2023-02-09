@@ -1,0 +1,275 @@
+@import "src/scss/sizes.scss";
+@import "src/scss/extends";
+
+button.mod-loading {
+  position: relative;
+  color: transparent;
+  cursor: default;
+
+  &:after {
+    display: block;
+    content: "";
+    width: 1.2em;
+    height: 1.2em;
+    position: absolute;
+    top: calc(50% - .55em);
+    left: calc(50% - .6em);
+    border: .15em solid white;
+    border-radius: .6em;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    animation: load 1s linear infinite;
+  }
+}
+
+.loader {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border-radius: .5em;
+  border: .1em solid white;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  animation: load 1s linear infinite;
+}
+
+@keyframes load {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.gl-title {
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 1;
+  padding-bottom: 10px;
+
+  &--small {
+    font-size: 18px;
+  }
+
+  &--middle {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 24px;
+  }
+
+  &--uppercase {
+    text-transform: uppercase;
+  }
+}
+
+.gl-subtitle {
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--gray-light-color);
+
+  &--big {
+    font-size: 14px;
+  }
+}
+
+.gl-link {
+  padding: 10px;
+  margin: -10px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.gl-purple-color {
+  color: var(--purple-color);
+}
+
+.gl-layout-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  flex: 1;
+  height: 100%;
+  //overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.gl-layout-content {
+  @extend %set-max-height;
+  width: 100%;
+  //height: 100%;
+  background-color: var(--layout-color);
+  padding-bottom: 100px;
+  background-image: url("../img/highlights.svg");
+  background-size: 2440px 2028px;
+  background-position: top 160px left 50%;
+
+  @include for-md-down {
+    padding-bottom: 60px;
+  }
+}
+
+.gl-page-content {
+  padding-left: var(--page-content-padding);
+  padding-right: var(--page-content-padding);
+  width: 100%;
+  max-width: calc(1300px + var(--page-content-padding) * 2);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gl-modal {
+  @extend %modal;
+  z-index: var(--z-index-modal);
+  background-color: rgba(42, 46, 52, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__container {
+    max-height: 100vh;
+    width: 344px;
+    overflow: auto;
+    background-color: #fff;
+    border-radius: var(--border-radius-huge);
+    margin: 30px 10px;
+
+    @include for-md-down {
+      margin: 0;
+    }
+  }
+}
+
+.gl-grid-container-24 {
+  display: grid;
+  grid-gap: var(--main-grid-gap);
+  grid-template-columns: repeat(24, 1fr);
+  grid-auto-rows: auto;
+
+  @include for-md-down {
+    grid-template-columns: 1fr;
+  }
+}
+
+.gl-full-row-24 {
+  @include for-md-up {
+    grid-column: 1 / 25;
+  }
+}
+
+.gl-grid-column-quarter-end {
+  display: grid;
+  grid-gap: var(--main-grid-gap);
+  grid-auto-rows: min-content;
+
+  @include for-fl-up {
+    grid-column: 18 / 25;
+  }
+
+  @include for-md-up {
+    grid-column: 17 / 25;
+  }
+}
+
+.gl-block {
+  background-color: rgba(43, 21, 118, 0.8);
+  border-radius: var(--border-radius-huge);
+  padding: var(--block-padding-side);
+
+  @include for-hg-down {
+    padding-top: 26px;
+    padding-bottom: 26px;
+  }
+
+  &--dark {
+    background-color: var(--purple-background);
+  }
+
+  &--gradient {
+    background: radial-gradient(90.2% 110.9% at 146.3% 0, #ca2dff75 0, rgba(3, 57, 89, 0) 100%), #221167;
+  }
+
+  &--grey {
+    background-color: var(--purple-background-08);
+  }
+
+  &--purple {
+    background-color: var(--purple-middle-background);
+  }
+}
+
+.gl-subscribe-form {
+  display: flex;
+  justify-content: center;
+}
+
+.gl-subscribe-input-wrapper {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.gl-subscribe-input {
+  display: none;
+
+  &:checked {
+    + .gl-subscribe-input-content {
+      &:before {
+        opacity: 0;
+      }
+
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.gl-subscribe-input-content {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  position: relative;
+
+  &:before, &:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+  }
+
+  &:before {
+    opacity: 1;
+    background-image: url("../img/play-now-icons/heart-empty.svg");
+  }
+
+  &:after {
+    opacity: 0;
+    background-image: url("../img/play-now-icons/heart-filled-red.svg");
+  }
+}
+
+.gl-bread-crumbs {
+  &--main {
+    margin: 44px 0;
+
+    @include for-hg-down {
+      margin: 34px 0;
+    }
+
+    @include for-md-down {
+      margin: 26px 0;
+    }
+  }
+}
+
+.gl-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  clip: rect(0 0 0 0);
+}

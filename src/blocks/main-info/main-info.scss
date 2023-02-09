@@ -1,0 +1,207 @@
+@import "src/scss/sizes";
+
+$header-height: 50px;
+
+.main-info {
+  @include for-fl-up {
+    grid-column: 1 / 18;
+  }
+
+  @include for-md-up {
+    grid-column: 1 / 17;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--gray-color-opasity-2);
+    background-color: var(--purple-middle-background);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    height: $header-height;
+
+    @include for-mb-down {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__statistic-link-wrapper {
+    display: flex;
+    align-items: center;
+    padding-left: 28px;
+    position: relative;
+
+    @include for-mb-down {
+      margin-bottom: 20px;
+    }
+
+    &:before, &:after {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      transform: translateY(-50%);
+      background-size: contain;
+      transition: opacity var(--transition-duration-fast);
+    }
+
+    &:before {
+      opacity: 1;
+      background-image: url("../img/chart.svg");
+    }
+
+    &:after {
+      opacity: 0;
+      background-image: url("../img/chart-hover.svg");
+    }
+
+    &:hover {
+      .main-info__header-link--purple {
+        background-color: var(--purple-color-hover);
+      }
+
+      &:before {
+        opacity: 0;
+      }
+
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__header-link {
+    padding: 4px 10px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    text-transform: uppercase;
+    border-radius: var(--border-radius-tiny);
+    background-color: var(--blue-dark-color);
+    transition: background-color var(--transition-duration-fast);
+
+    &:hover {
+      &:not(.main-info__header-link--purple) {
+        background-color: var(--blue-middle-color);
+      }
+    }
+
+    & + & {
+      margin-left: 10px;
+    }
+
+    &--purple {
+      background-color: var(--purple-color);
+    }
+  }
+
+  &__header-links-conteiner {
+    display: flex;
+  }
+
+  &__content {
+    height: calc(100% - #{$header-height});
+    padding-top: 24px;
+    padding-right: 20px;
+    flex: 1 1 100%;
+
+    h2 {
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 30px;
+    }
+
+    .iframe-container {
+      display: flex;
+      justify-content: center;
+      margin: 32px 0;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .iframe-wrapper {
+      background: var(--blue-middle-color);
+      border-radius: var(--border-radius-tiny);
+      padding: 8px;
+    }
+
+    iframe {
+      width: 626px;
+      height: 356px;
+
+      @include for-fl-down {
+        width: 432px;
+        height: 246px;
+      }
+
+      @include for-md-down {
+        width: calc(#{$small} - (16px + var(--page-content-padding)) * 2);
+        height: calc((#{$small} - (16px + var(--page-content-padding)) * 2) * 356 / 626);
+      }
+
+      @include for-sm-down {
+        width: calc(#{$mobile} - (16px + var(--page-content-padding)) * 2);
+        height: calc((#{$mobile} - (16px + var(--page-content-padding)) * 2) * 356 / 626);
+      }
+
+      @include for-mb-down {
+        width: calc(#{$xs} - (16px + var(--page-content-padding)) * 2);
+        height: calc((#{$xs} - (16px + var(--page-content-padding)) * 2) * 356 / 626);
+      }
+
+      @include for-xs-down {
+        width: calc(#{$xxs} - (16px + var(--page-content-padding)) * 2);
+        height: calc((#{$xxs} - (16px + var(--page-content-padding)) * 2) * 356 / 626);
+      }
+    }
+
+    p, li {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+      color: var(--gray-light-color);
+    }
+
+    h2, p, ol {
+      margin-bottom: 18px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    b {
+      font-weight: 500;
+    }
+
+    ol {
+      li {
+        padding-left: 20px;
+        position: relative;
+
+        &:before {
+          position: absolute;
+          content: '';
+          top: 8px;
+          left: 0;
+          width: 4px;
+          height: 4px;
+          background-color: var(--gray-light-color);
+          border-radius: 100%;
+        }
+      }
+    }
+  }
+}

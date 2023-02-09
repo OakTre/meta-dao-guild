@@ -1,0 +1,52 @@
+@import "src/scss/sizes";
+
+.main-slider {
+  width: 100%;
+
+  @include for-md-up {
+    grid-column: 1 / 25;
+  }
+
+  &__content {
+    position: relative;
+    width: 100%;
+
+    @include for-md-down {
+      width: calc(100vw - var(--page-content-padding) * 2);
+    }
+
+    @include for-md-up {
+      background: var(--purple-background);
+      border-radius: var(--border-radius-huge);
+    }
+  }
+
+  &__swiper-container {
+    @include for-md-up {
+      padding: 10px;
+      overflow-x: hidden;
+    }
+  }
+
+  &__swiper-slide {
+    overflow: hidden;
+    border-radius: var(--border-radius-middle);
+    height: 190px;
+
+    @include for-md-down {
+      height: 250px;
+    }
+  }
+
+  &__swiper-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__swiper-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

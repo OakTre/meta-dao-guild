@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html class="page  no-js" lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="date=no">
+  <meta name="format-detection" content="address=no">
+  <meta name="format-detection" content="email=no">
+  <meta content="notranslate" name="google">
+  <link rel="icon" sizes="180x180" href="img/logo.png">
+  <title>Page 1</title>
+  <meta name="description" content="">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+// Убрать на html класс "no-js", добавить класс "js": с уровня стилей знаем работает ли JS
+document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+
+// Браузер и ОС
+function cth(c){document.documentElement.classList.add(c)}
+'ontouchstart' in window?cth('touch'):cth('no-touch');
+if(typeof InstallTrigger!=='undefined')cth('firefox');
+if(/constructor/i.test(window.HTMLElement)||(function(p){return p.toString()==="[object SafariRemoteNotification]"})(!window['safari']||(typeof safari!=='undefined'&&safari.pushNotification)))cth('safari');
+if(/*@cc_on!@*/false||!!document.documentMode)cth('ie');
+if(!(/*@cc_on!@*/false||!!document.documentMode)&&!!window.StyleMedia)cth('edge');
+if(!!window.chrome&&(!!window.chrome.webstore||!!window.chrome.runtime))cth('chrome');
+if(~navigator.appVersion.indexOf("Win"))cth('windows');
+if(~navigator.appVersion.indexOf("Mac"))cth('osx');
+if(~['iPad','iPhone','iPod'].indexOf(navigator.platform))cth('ios');
+if(~navigator.appVersion.indexOf("Linux"))cth('linux');
+
+// Добавление 1vh (использование: height: 100vh; height: calc(var(--vh, 1vh) * 100);) для фикса 100vh на мобилках
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+window.addEventListener('resize', () => {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
+</script>
+</head>
+
+<body>
+  <div class="gl-layout-container overlayscrollbars">
+    <header class="header" id="header-host">
+      <div class="gl-page-content">
+        <div class="header__content-wrapper">
+          <div class="header__nav-links-wrapper gl-hg-hide"><a class="header__nav-link--guild header__nav-link" href="https://metadao.gg">guild</a><a class="header__nav-link--active header__nav-link" href="/games.html">games</a><a class="header__nav-link" href="" disabled="disabled">nft</a><a class="header__nav-link" href="" disabled="disabled">airdrop</a><a class="header__nav-link" href="" disabled="disabled">news</a></div><a class="header__logo-link" href="/"><img class="header__logo" loading="lazy" src="img/logo.svg" alt="logo-header" width="220" height="110" /></a>
+          <div class="header__btns-login-wrapper"><a class="header__btn gl-hg-hide" href="/login-block.html">Log in</a><a class="header__btn gl-hg-hide" href="/signup.html">Sign up</a><a class="header__btn gl-hg-show" href="/login-block.html"><img class="header__login-icon" loading="lazy" src="img/profile.svg" alt="login-block-icon" width="20" height="20" /></a></div>
+          <div class="header__btn-connect-wrapper gl-hg-hide"><button class="header__btn header__btn--blue" type="button">connect wallet</button></div><!-- языковой селект--><!--.header__lang-wrapper--><!--  +lang-select()-->
+          <div class="header__burger-btn-wrapper gl-hg-show"><button class="header__burger-btn" type="button" id="btn-burger"></button></div>
+        </div>
+      </div>
+    </header>
+    <div class="gl-layout-content">
+      <div class="gl-bread-crumbs--main">
+        <div class="bread-crumbs">
+          <div class="gl-page-content">
+            <ul class="bread-crumbs__container">
+              <li><a class="bread-crumbs__item bread-crumbs__item--link" href="#">Meta DAO</a></li>
+              <li><a class="bread-crumbs__item bread-crumbs__item--link" href="#">discover games</a></li>
+              <li>
+                <div class="bread-crumbs__item">games</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="gl-page-content">
+        <section class="game-form-container">
+          <form class="add-game-form js-add-game-form" action="./" enctype="multipart/form-data" data-need-validation="data-need-validation">
+            <h2 class="add-game-form__heading">Add game</h2>
+            <ul class="add-game-form__headings">
+              <li class="add-game-form__headings-item add-game-form__legend js-heading-form is-visible">Information</li>
+              <li class="add-game-form__headings-item add-game-form__legend js-heading-form">Genre</li>
+              <li class="add-game-form__headings-item add-game-form__legend js-heading-form">Blockchain</li>
+              <li class="add-game-form__headings-item add-game-form__legend js-heading-form">Device</li>
+              <li class="add-game-form__headings-item add-game-form__legend js-heading-form">Status</li>
+              <li class="add-game-form__headings-item add-game-form__legend js-heading-form">F2P and Scholarship</li>
+              <li class="add-game-form__headings-item add-game-form__legend js-heading-form">Screenshots</li>
+              <li class="add-game-form__headings-item add-game-form__legend js-heading-form">Review</li>
+              <li class="add-game-form__headings-item add-game-form__legend js-heading-form">Information2</li>
+              <li class="add-game-form__headings-item add-game-form__legend js-heading-form">Referral Program</li>
+            </ul>
+            <ul class="add-game-form__steps">
+              <li class="add-game-form__step-item"><button class="add-game-form__step-btn js-step-btn is-filled" data-step-label="Information" data-step="0" type="button"><span class="gl-visually-hidden">Step 1</span></button></li>
+              <li class="add-game-form__step-item"><button class="add-game-form__step-btn js-step-btn" data-step-label="Genre" data-step="1" type="button"><span class="gl-visually-hidden">Step 2</span></button></li>
+              <li class="add-game-form__step-item"><button class="add-game-form__step-btn js-step-btn" data-step-label="Blockchain" data-step="2" type="button"><span class="gl-visually-hidden">Step 3</span></button></li>
+              <li class="add-game-form__step-item"><button class="add-game-form__step-btn js-step-btn" data-step-label="Device" data-step="3" type="button"><span class="gl-visually-hidden">Step 4</span></button></li>
+              <li class="add-game-form__step-item"><button class="add-game-form__step-btn js-step-btn" data-step-label="Status" data-step="4" type="button"><span class="gl-visually-hidden">Step 5</span></button></li>
+              <li class="add-game-form__step-item"><button class="add-game-form__step-btn js-step-btn" data-step-label="F2P and Scholarship" data-step="5" type="button"><span class="gl-visually-hidden">Step 6</span></button></li>
+              <li class="add-game-form__step-item"><button class="add-game-form__step-btn js-step-btn" data-step-label="Screenshots" data-step="6" type="button"><span class="gl-visually-hidden">Step 7</span></button></li>
+              <li class="add-game-form__step-item"><button class="add-game-form__step-btn js-step-btn" data-step-label="Review" data-step="7" type="button"><span class="gl-visually-hidden">Step 8</span></button></li>
+              <li class="add-game-form__step-item"><button class="add-game-form__step-btn js-step-btn" data-step-label="Information2" data-step="8" type="button"><span class="gl-visually-hidden">Step 9</span></button></li>
+              <li class="add-game-form__step-item"><button class="add-game-form__step-btn js-step-btn" data-step-label="Referral Program" data-step="9" type="button"><span class="gl-visually-hidden">Step 10</span></button></li>
+            </ul>
+            <div class="game-form game-form-step is-visible"><label class="game-form__input js-validate-container"><span class="game-form__input-label">E-mail</span><input class="gl-input" type="text" name="email" data-parsley-type="email" data-parsley-required="false" data-parsley-group="Information" placeholder="Your e-mail address" /></label><label class="game-form__input js-validate-container"><span class="game-form__input-label">What is the name of the game?*</span>
+                <div class="gl-controls-count-wrapper" data-count="0/30"><input class="gl-input js-length-count" type="text" name="game_name" data-parsley-required="true" data-parsley-maxlength="30" data-parsley-group="Information" placeholder="Answer" /></div>
+              </label><label class="game-form__input js-validate-container"><span class="game-form__input-label">A brief description of the game*</span>
+                <div class="gl-controls-count-wrapper" data-count="0/150"><textarea class="gl-textarea js-length-count" name="brief" data-parsley-maxlength="150" data-parsley-required="123" data-parsley-group="Information" placeholder="Answer"></textarea></div>
+              </label><span class="game-form__input-label">Date of the release of the game*</span><span class="game-form__text">Indicate the date of the start of the game or if the game is in the development, then the planned release date</span>
+              <div class="game-form__input game-form__input--small game-form__input--iconed js-validate-container"><input class="gl-input js-date-inpt" type="text" name="date" data-parsley-required="true" data-parsley-date="data-parsley-date" data-parsley-group="Information" placeholder="Select date" /></div><label class="game-form__input js-validate-container"><span class="game-form__input-label">Your Website*</span><input class="gl-input" type="text" name="website" data-parsley-type="url" data-parsley-required="true" data-parsley-group="Information" placeholder="Answer" /></label><label class="game-form__input js-validate-container"><span class="game-form__input-label">Your Twitter</span><input class="gl-input" type="text" name="twitter" data-parsley-type="text" data-parsley-required="false" data-parsley-group="Information" placeholder="Answer" /></label><label class="game-form__input js-validate-container"><span class="game-form__input-label">Your Discord</span><input class="gl-input" type="text" name="discord" data-parsley-type="text" data-parsley-required="false" data-parsley-group="Information" placeholder="Answer" /></label><label class="game-form__input js-validate-container"><span class="game-form__input-label">Your Telegram</span><input class="gl-input" type="text" name="telegram" data-parsley-type="text" data-parsley-required="false" data-parsley-group="Information" placeholder="Answer" /></label><label class="game-form__input js-validate-container"><span class="game-form__input-label">Your Facebook</span><input class="gl-input" type="text" name="facebook" data-parsley-type="text" data-parsley-required="false" data-parsley-group="Information" placeholder="Answer" /></label><label class="game-form__input js-validate-container"><span class="game-form__input-label">Your YouTube</span><input class="gl-input" type="text" name="youTube" data-parsley-type="text" data-parsley-required="false" data-parsley-group="Information" placeholder="Answer" /></label><span class="game-form__input-label">Add the game logo*</span><span class="game-form__text">The size of the logo is 100x100px and not more than 1 MB in the PNG format</span><label class="gl-input-file game-form__input-file js-file-upload js-validate-container"><input class="gl-visually-hidden" type="file" name="game_logo" data-parsley-file-type-png="" data-parsley-max-file-size="1" data-parsley-required="true" data-parsley-group="Information" placeholder="Add logo" /><span class="gl-input-file__text js-file-upload-text" data-text="Add logo">Add logo</span></label>
+            </div>
+            <div class="game-form game-form-step js-validate-container"><input class="gl-visually-hidden js-real-inpt" type="text" name="genre" data-parsley-group="Genre" data-parsley-required="data-parsley-required" value="" /><span class="game-form__input-label">What is the genre of the game?*</span><span class="game-form__text">Select a maximum of three genres from the list</span>
+              <ul class="game-form__checkbox-container">
+                <li class="game-form__checkbox-item"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden gl-checkbox-arrow__control js-check-genre" type="checkbox" data-parsley-required="false" value="Action" /><span class="gl-checkbox-arrow__text">Action</span></label></li>
+                <li class="game-form__checkbox-item"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden gl-checkbox-arrow__control js-check-genre" type="checkbox" data-parsley-required="false" value="Minigame" /><span class="gl-checkbox-arrow__text">Minigame</span></label></li>
+                <li class="game-form__checkbox-item"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden gl-checkbox-arrow__control js-check-genre" type="checkbox" data-parsley-required="false" value="Adventure" /><span class="gl-checkbox-arrow__text">Adventure</span></label></li>
+                <li class="game-form__checkbox-item"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden gl-checkbox-arrow__control js-check-genre" type="checkbox" data-parsley-required="false" value="MOBA" /><span class="gl-checkbox-arrow__text">MOBA</span></label></li>
+                <li class="game-form__checkbox-item"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden gl-checkbox-arrow__control js-check-genre" type="checkbox" data-parsley-required="false" value="Arcade" /><span class="gl-checkbox-arrow__text">Arcade</span></label></li>
+                <li class="game-form__checkbox-item"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden gl-checkbox-arrow__control js-check-genre" type="checkbox" data-parsley-required="false" value="M2E" /><span class="gl-checkbox-arrow__text">M2E</span></label></li>
+                <li class="game-form__checkbox-item"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden gl-checkbox-arrow__control js-check-genre" type="checkbox" data-parsley-required="false" value="AR" /><span class="gl-checkbox-arrow__text">AR</span></label></li>
+                <li class="game-form__checkbox-item"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden gl-checkbox-arrow__control js-check-genre" type="checkbox" data-parsley-required="false" value="PVE" /><span class="gl-checkbox-arrow__text">PVE</span></label></li>
+                <li class="game-form__checkbox-item"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden gl-checkbox-arrow__control js-check-genre" type="checkbox" data-parsley-required="false" value="Auto-Battler" /><span class="gl-checkbox-arrow__text">Auto-Battler</span></label></li>
+                <li class="game-form__checkbox-item"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden gl-checkbox-arrow__control js-check-genre" type="checkbox" data-parsley-required="false" value="PVP" /><span class="gl-checkbox-arrow__text">PVP</span></label></li>
+                <li class="game-form__checkbox-item"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden gl-checkbox-arrow__control js-check-genre" type="checkbox" data-parsley-required="false" value="Battle-Royale" /><span class="gl-checkbox-arrow__text">Battle-Royale</span></label></li>
+                <li class="game-form__checkbox-item"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden gl-checkbox-arrow__control js-check-genre" type="checkbox" data-parsley-required="false" value="Racing" /><span class="gl-checkbox-arrow__text">Racing</span></label></li>
+                <li class="game-form__checkbox-item"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden gl-checkbox-arrow__control js-check-genre" type="checkbox" data-parsley-required="false" value="Breeding" /><span class="gl-checkbox-arrow__text">Breeding</span></label></li>
+                <li class="game-form__checkbox-item"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden gl-checkbox-arrow__control js-check-genre" type="checkbox" data-parsley-required="false" value="MMORPG" /><span class="gl-checkbox-arrow__text">MMORPG</span></label></li>
+                <li class="game-form__checkbox-item"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden gl-checkbox-arrow__control js-check-genre" type="checkbox" data-parsley-required="false" value="Building" /><span class="gl-checkbox-arrow__text">Building</span></label></li>
+                <li class="game-form__checkbox-item"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden gl-checkbox-arrow__control js-check-genre" type="checkbox" data-parsley-required="false" value="Shooter" /><span class="gl-checkbox-arrow__text">Shooter</span></label></li>
+                <li class="game-form__checkbox-item"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden gl-checkbox-arrow__control js-check-genre" type="checkbox" data-parsley-required="false" value="Card" /><span class="gl-checkbox-arrow__text">Card</span></label></li>
+                <li class="game-form__checkbox-item"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden gl-checkbox-arrow__control js-check-genre" type="checkbox" data-parsley-required="false" value="Sports" /><span class="gl-checkbox-arrow__text">Sports</span></label></li>
+                <li class="game-form__checkbox-item"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden gl-checkbox-arrow__control js-check-genre" type="checkbox" data-parsley-required="false" value="Collectible" /><span class="gl-checkbox-arrow__text">Collectible</span></label></li>
+                <li class="game-form__checkbox-item"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden gl-checkbox-arrow__control js-check-genre" type="checkbox" data-parsley-required="false" value="Strategy" /><span class="gl-checkbox-arrow__text">Strategy</span></label></li>
+                <li class="game-form__checkbox-item"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden gl-checkbox-arrow__control js-check-genre" type="checkbox" data-parsley-required="false" value="Fighting" /><span class="gl-checkbox-arrow__text">Fighting</span></label></li>
+                <li class="game-form__checkbox-item"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden gl-checkbox-arrow__control js-check-genre" type="checkbox" data-parsley-required="false" value="VR" /><span class="gl-checkbox-arrow__text">VR</span></label></li>
+                <li class="game-form__checkbox-item"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden gl-checkbox-arrow__control js-check-genre" type="checkbox" data-parsley-required="false" value="Horror" /><span class="gl-checkbox-arrow__text">Horror</span></label></li>
+                <li class="game-form__checkbox-item"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden gl-checkbox-arrow__control js-check-genre" type="checkbox" data-parsley-required="false" value="Other" /><span class="gl-checkbox-arrow__text">Other</span></label></li>
+              </ul>
+            </div>
+            <div class="game-form game-form-step js-validate-container"><input class="gl-visually-hidden js-real-inpt" type="text" name="blockchain" data-parsley-group="Blockchain" data-parsley-required="data-parsley-required" value="" /><span class="game-form__input-label">What blockchain is your game made on?*</span><span class="game-form__text">Select a maximum of three genres from the list</span>
+              <ul class="game-form__checkbox-container">
+                <li class="game-form__checkbox-item"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden js-check-blockchain gl-checkbox-arrow__control" type="checkbox" data-parsley-required="false" value="BSC" /><span class="gl-checkbox-arrow__text">BSC</span></label></li>
+                <li class="game-form__checkbox-item"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden js-check-blockchain gl-checkbox-arrow__control" type="checkbox" data-parsley-required="false" value="TRON" /><span class="gl-checkbox-arrow__text">TRON</span></label></li>
+                <li class="game-form__checkbox-item"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden js-check-blockchain gl-checkbox-arrow__control" type="checkbox" data-parsley-required="false" value="Ethereum" /><span class="gl-checkbox-arrow__text">Ethereum</span></label></li>
+                <li class="game-form__checkbox-item"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden js-check-blockchain gl-checkbox-arrow__control" type="checkbox" data-parsley-required="false" value="Gala-Games" /><span class="gl-checkbox-arrow__text">Gala-Games</span></label></li>
+                <li class="game-form__checkbox-item"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden js-check-blockchain gl-checkbox-arrow__control" type="checkbox" data-parsley-required="false" value="Polygon" /><span class="gl-checkbox-arrow__text">Polygon</span></label></li>
+                <li class="game-form__checkbox-item"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden js-check-blockchain gl-checkbox-arrow__control" type="checkbox" data-parsley-required="false" value="Avalanche" /><span class="gl-checkbox-arrow__text">Avalanche</span></label></li>
+                <li class="game-form__checkbox-item"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden js-check-blockchain gl-checkbox-arrow__control" type="checkbox" data-parsley-required="false" value="Immutable X" /><span class="gl-checkbox-arrow__text">Immutable X</span></label></li>
+                <li class="game-form__checkbox-item"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden js-check-blockchain gl-checkbox-arrow__control" type="checkbox" data-parsley-required="false" value="Harmony" /><span class="gl-checkbox-arrow__text">Harmony</span></label></li>
+                <li class="game-form__checkbox-item"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden js-check-blockchain gl-checkbox-arrow__control" type="checkbox" data-parsley-required="false" value="Solana" /><span class="gl-checkbox-arrow__text">Solana</span></label></li>
+                <li class="game-form__checkbox-item"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden js-check-blockchain gl-checkbox-arrow__control" type="checkbox" data-parsley-required="false" value="EOS" /><span class="gl-checkbox-arrow__text">EOS</span></label></li>
+                <li class="game-form__checkbox-item"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden js-check-blockchain gl-checkbox-arrow__control" type="checkbox" data-parsley-required="false" value="Near" /><span class="gl-checkbox-arrow__text">Near</span></label></li>
+                <li class="game-form__checkbox-item"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden js-check-blockchain gl-checkbox-arrow__control" type="checkbox" data-parsley-required="false" value="WAX" /><span class="gl-checkbox-arrow__text">WAX</span></label></li>
+                <li class="game-form__checkbox-item"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden js-check-blockchain gl-checkbox-arrow__control" type="checkbox" data-parsley-required="false" value="Waves" /><span class="gl-checkbox-arrow__text">Waves</span></label></li>
+                <li class="game-form__checkbox-item"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden js-check-blockchain gl-checkbox-arrow__control" type="checkbox" data-parsley-required="false" value="Other" /><span class="gl-checkbox-arrow__text">Other</span></label></li>
+              </ul>
+            </div>
+            <div class="game-form game-form-step js-validate-container"><input class="gl-visually-hidden js-real-inpt" type="text" name="device" data-parsley-group="Device" data-parsley-required="data-parsley-required" value="" /><span class="game-form__input-label">What device can users play the game on?*</span><span class="game-form__text">If the game is still in development, indicate which devices will be accessible to the game.</span>
+              <ul class="game-form__checkbox-container">
+                <li class="game-form__checkbox-item game-form__checkbox-item--full"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden js-check-device gl-checkbox-arrow__control" type="checkbox" data-parsley-required="false" value="Web" /><span class="gl-checkbox-arrow__text">Web</span></label></li>
+                <li class="game-form__checkbox-item game-form__checkbox-item--full"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden js-check-device gl-checkbox-arrow__control" type="checkbox" data-parsley-required="false" value="iOS" /><span class="gl-checkbox-arrow__text">iOS</span></label></li>
+                <li class="game-form__checkbox-item game-form__checkbox-item--full"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden js-check-device gl-checkbox-arrow__control" type="checkbox" data-parsley-required="false" value="Android" /><span class="gl-checkbox-arrow__text">Android</span></label></li>
+                <li class="game-form__checkbox-item game-form__checkbox-item--full"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden js-check-device gl-checkbox-arrow__control" type="checkbox" data-parsley-required="false" value="PC" /><span class="gl-checkbox-arrow__text">PC</span></label></li>
+              </ul>
+            </div>
+            <div class="game-form game-form-step"><span class="game-form__input-label">What is the status of the game now?*</span>
+              <ul class="game-form__checkbox-container js-validate-container">
+                <li class="game-form__checkbox-item game-form__checkbox-item--full"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden gl-checkbox-arrow__control" type="radio" name="status" data-parsley-group="Status" data-parsley-required="data-parsley-required" value="Live" /><span class="gl-checkbox-arrow__text">Live</span></label></li>
+                <li class="game-form__checkbox-item game-form__checkbox-item--full"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden gl-checkbox-arrow__control" type="radio" name="status" data-parsley-group="Status" data-parsley-required="data-parsley-required" value="Alpha" /><span class="gl-checkbox-arrow__text">Alpha</span></label></li>
+                <li class="game-form__checkbox-item game-form__checkbox-item--full"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden gl-checkbox-arrow__control" type="radio" name="status" data-parsley-group="Status" data-parsley-required="data-parsley-required" value="Beta" /><span class="gl-checkbox-arrow__text">Beta</span></label></li>
+                <li class="game-form__checkbox-item game-form__checkbox-item--full"><label class="gl-checkbox-arrow"><input class="gl-visually-hidden gl-checkbox-arrow__control" type="radio" name="status" data-parsley-group="Status" data-parsley-required="data-parsley-required" value="Development" /><span class="gl-checkbox-arrow__text">Development</span></label></li>
+              </ul>
+            </div>
+            <div class="game-form game-form-step"><span class="game-form__input-label">Can a user play this game for free?*</span>
+              <ul class="game-form__checkbox-container js-validate-container">
+                <li class="game-form__checkbox-item game-form__checkbox-item--full"><label class="gl-checkbox-arrow gl-checkbox-arrow--rounded"><input class="gl-visually-hidden gl-checkbox-arrow__control" type="radio" name="free_play" data-parsley-group="F2P and Scholarship" data-parsley-required="data-parsley-required" value="Yes" /><span class="gl-checkbox-arrow__text">Yes</span></label></li>
+                <li class="game-form__checkbox-item game-form__checkbox-item--full"><label class="gl-checkbox-arrow gl-checkbox-arrow--rounded"><input class="gl-visually-hidden gl-checkbox-arrow__control" type="radio" name="free_play" data-parsley-group="F2P and Scholarship" data-parsley-required="data-parsley-required" value="No" /><span class="gl-checkbox-arrow__text">No</span></label></li>
+              </ul><span class="game-form__input-label">Do you have Scholarship mechanics?*</span>
+              <ul class="game-form__checkbox-container js-validate-container">
+                <li class="game-form__checkbox-item game-form__checkbox-item--full"><label class="gl-checkbox-arrow gl-checkbox-arrow--rounded"><input class="gl-visually-hidden gl-checkbox-arrow__control" type="radio" name="scholarship_mechanics" data-parsley-group="F2P and Scholarship" data-parsley-required="data-parsley-required" value="Yes" /><span class="gl-checkbox-arrow__text">Yes</span></label></li>
+                <li class="game-form__checkbox-item game-form__checkbox-item--full"><label class="gl-checkbox-arrow gl-checkbox-arrow--rounded"><input class="gl-visually-hidden gl-checkbox-arrow__control" type="radio" name="scholarship_mechanics" data-parsley-group="F2P and Scholarship" data-parsley-required="data-parsley-required" value="No" /><span class="gl-checkbox-arrow__text">No</span></label></li>
+              </ul>
+            </div>
+            <div class="game-form game-form-step"><span class="game-form__input-label">Download the screenshots of the game*</span><span class="game-form__text">You need to add at least 4 screenshots (1920x1080px) from the game to display the game mechanics for the user</span>
+              <div class="js-file-upload js-validate-container"><input class="gl-visually-hidden" type="file" multiple="multiple" name="screenshots[]" id="fileInput" data-parsley-file-type-images="data-parsley-file-type-images" data-parsley-multiple-of="4" data-parsley-required="data-parsley-required" data-parsley-group="Screenshots" /><label class="game-form__file-label" for="fileInput">
+                  <div class="gl-input-file game-form__input-file"><span class="gl-input-file__text js-file-upload-text" data-text="Add file">Add file</span></div>
+                  <div class="game-form__files-container"></div>
+                </label></div>
+            </div>
+            <div class="game-form game-form-step"><label class="game-form__input js-validate-container"><span class="game-form__input-label">Add text review to the game*</span><span class="game-form__text">A review of the game should consist of 3 000-10 000 characters</span>
+                <div class="gl-controls-count-wrapper" data-count="0/10000"><textarea class="gl-textarea js-length-count" data-parsley-minlength="3000" data-parsley-maxlength="10000" data-parsley-required="true" data-parsley-group="Review" name="review_to_game" placeholder="Answer"></textarea></div>
+              </label><label class="game-form__input js-validate-container"><span class="game-form__input-label">Add a link to YouTube to a game review*</span><span class="game-form__text">It can be a game trailer, your video review or other high quality video review from bloggers</span><input class="gl-input" type="url" name="youtube_link" data-parsley-required="true" data-parsley-group="Review" placeholder="Answer" /></label><label class="game-form__input js-validate-container"><span class="game-form__input-label">Add Pitch (if any)</span><input class="gl-input" type="text" data-parsley-required="false" data-parsley-group="Review" placeholder="Answer" /></label><label class="game-form__input js-validate-container"><span class="game-form__input-label">Add the White Paper (if any)</span><input class="gl-input" type="text" data-parsley-required="false" data-parsley-group="Review" placeholder="Answer" /></label></div>
+            <div class="game-form game-form-step"><label class="game-form__input"><span class="game-form__input-label">Indicate smart contract of the token that is used in the game</span><input class="gl-input" type="text" placeholder="Answer" /></label><label class="game-form__input"><span class="game-form__input-label">Indicate the Token ticker</span><input class="gl-input" type="text" placeholder="Answer" /></label><label class="game-form__input"><span class="game-form__input-label">What is the minimum entrance to the game (USDT)?</span><input class="gl-input" type="text" placeholder="Answer" /></label><label class="game-form__input"><span class="game-form__input-label">What is the minimum earnings in the game per day (USDT)?</span><input class="gl-input" type="text" placeholder="Answer" /></label></div>
+            <div class="game-form game-form-step"><span class="game-form__input-label">Do you have a referral program?*</span>
+              <ul class="game-form__checkbox-container game-form__checkbox-container--mb36 js-validate-container">
+                <li class="game-form__checkbox-item game-form__checkbox-item--full"><label class="gl-checkbox-arrow gl-checkbox-arrow--rounded"><input class="gl-visually-hidden gl-checkbox-arrow__control" type="radio" name="referral_program" data-parsley-required="data-parsley-required" value="yes" /><span class="gl-checkbox-arrow__text">Yes</span></label></li>
+                <li class="game-form__checkbox-item game-form__checkbox-item--full"><label class="gl-checkbox-arrow gl-checkbox-arrow--rounded"><input class="gl-visually-hidden gl-checkbox-arrow__control" type="radio" name="referral_program" data-parsley-required="data-parsley-required" value="No" /><span class="gl-checkbox-arrow__text">No</span></label></li>
+              </ul><label class="game-form__input"><span class="game-form__input-label">Add the link describing the referral program (if any)</span><input class="gl-input" type="url" data-parsley-type="url" data-parsley-group="Referral Program" name="referral_program_link" placeholder="Answer" /></label>
+            </div>
+            <div class="game-form__btns-group"><button class="game-form__btn-back gl-btn-third js-prev-btn is-hidden" type="button">back</button><button class="game-form__btn gl-btn js-next-btn" type="button" data-current-group="Information">Next</button><button class="game-form__btn game-form__btn-submit gl-btn js-sumbit-btn">Send</button></div>
+          </form>
+        </section>
+        <div class="game-form-modal js-succes-modal">
+          <div class="game-form-modal__inner"><button class="game-form-modal__btn-close js-close-modal"><span class="gl-visually-hidden">close modal</span></button><img class="game-form-modal__img" src="img/checkmark-circle.svg" alt="" />
+            <div class="game-form-modal__heading">Form was successfully sent!</div>
+            <div class="game-form-modal__text">The game will be added after checking by the manager</div>
+          </div>
+        </div>
+        <div class="game-form-modal js-error-modal">
+          <div class="game-form-modal__inner"><button class="game-form-modal__btn-close js-close-modal"><span class="gl-visually-hidden">close modal</span></button><img class="game-form-modal__img" src="img/error-circle.svg" alt="" />
+            <div class="game-form-modal__heading">Something went wrong. Check the form fields and try again.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="side-bar" id="side-bar"><button class="side-bar__close-btn" type="button" id="side-bar-close-btn"><img class="side-bar__img" loading="lazy" src="img/close.svg" alt="close" width="20" height="20" /></button><button class="side-bar__btn side-bar__btn--blue" type="button">connect wallet</button>
+      <nav class="side-bar__links-wrapper"><a class="side-bar__link--mark side-bar__link" href="/">guild</a><a class="side-bar__link" href="/games.html">games</a><a class="side-bar__link" href="" disabled="disabled">nft</a><a class="side-bar__link" href="" disabled="disabled">airdrop</a></nav>
+      <div class="side-bar__login-links-wrapper"><a class="side-bar__login-link" href="/login-block.html">Log in</a><a class="side-bar__login-link" href="/signup.html">Sign up</a></div>
+      <div class="side-bar__social"><a class="side-bar__social-link--twitter side-bar__social-link" href=""></a><a class="side-bar__social-link--telegram side-bar__social-link" href=""></a><a class="side-bar__social-link--discord side-bar__social-link" href=""></a><a class="side-bar__social-link--youtube side-bar__social-link" href=""></a><a class="side-bar__social-link--medium side-bar__social-link" href=""></a></div>
+    </div>
+    <footer class="footer">
+      <div class="footer__page-content gl-page-content">
+        <div class="footer__content">
+          <nav class="footer__links-container"><a class="footer__link" href="">whitepaper</a><a class="footer__link" href="">Meta rent</a><a class="footer__link" href="">scoolarship</a><a class="footer__link" href="">mogg token</a><a class="footer__link" href="">team</a></nav>
+          <div class="footer__logo-link-container"><a class="footer__logo-link" href="/">
+              <picture>
+                <source srcset="img/logo-footer.webp" type="image/webp" /><img class="footer__logo" loading="lazy" src="img/logo-footer.svg" alt="logo-footer" width="222" height="110" />
+              </picture>
+            </a></div>
+          <div class="footer__right-block">
+            <div class="footer__social-container"><a class="footer__social-link--twitter footer__social-link" href=""></a><a class="footer__social-link--telegram footer__social-link" href=""></a><a class="footer__social-link--discord footer__social-link" href=""></a><a class="footer__social-link--youtube footer__social-link" href=""></a><a class="footer__social-link--medium footer__social-link" href=""></a></div><!-- переключатель языка--><!--.gl-fl-hide--><!--  +lang-select()-->
+            <div class="footer__btns-wrapper"><a class="footer__btn" href="/login-block.html">Log in</a><a class="footer__btn" href="/signup.html">Sign up</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__info"><span>Contact email for partnership:</span><a class="footer__info-link" href="mailto:pr@metadao.gg">pr@metadao.gg</a><br/><span>Support:</span><a class="footer__info-link" href="mailto:support@metadao.gg">support@metadao.gg</a></div>
+    </footer>
+  </div><script src="js/bundle.js">
+  </script>
+
+</body>
+
+</html>

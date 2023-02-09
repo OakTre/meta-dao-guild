@@ -1,0 +1,25 @@
+//- Все примеси в этом файле должны начинаться c имени блока (basic-info)
+
+mixin basic-info()
+  - const pricesArr = [{caption: "Earnings per Day", value: "$0.17"}, {caption: "Upfront Cost", value: "$10"}];
+  - const linksArr = [{title: "Blockchain", links: [{href: "", img: "img/blockchain/bsc.svg"}]}, {title: "Device", links: [{href: "", img: "img/devices/apple.svg"}, {href: "", img: "img/devices/android.svg"}, {href: "", img: "img/devices/windows.svg"}]}, {title: "Token ticker", links: [{href: "", img: "img/tnc.svg"}]}];
+
+  .basic-info.gl-block
+    .basic-info__header-wrapper
+      h2.gl-title.gl-title--small Basic info
+      .gl-subtitle Complete the training and get the
+
+    .basic-info__praces-wrapper
+      each price in pricesArr
+        button(type="button").basic-info__price-btn
+          .basic-info__price-caption= price.caption
+          .basic-info__price-value= price.value
+
+    .basic-info__links-container
+      each linkWrap in linksArr
+        .basic-info__links-item
+          .basic-info__links-title= linkWrap.title
+          .basic-info__links-wrapper
+            each link in linkWrap.links
+              a(href=link.href).basic-info__link
+                img(loading="lazy" src=link.img alt="image" height="24").basic-info__link-icon

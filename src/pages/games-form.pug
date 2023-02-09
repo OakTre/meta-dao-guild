@@ -1,0 +1,21 @@
+extends ../pug/layout.pug
+
+block meta
+  title Page 1
+  meta(name='description', content='')
+
+block layout-container
+  - const breadCrumbs = [{text: "Meta DAO", href: "#"}, {text: "discover games", href: "#"}, {text: "games"}];
+  - const stTitle1 = "Add game";
+
+  .gl-layout-container.overlayscrollbars
+    +header("games")
+
+    .gl-layout-content
+      .gl-bread-crumbs--main
+        +bread-crumbs(breadCrumbs)
+      .gl-page-content
+        +add-game-form()
+
+    +side-bar()
+    +footer()

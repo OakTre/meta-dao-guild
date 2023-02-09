@@ -1,0 +1,22 @@
+//- Все примеси в этом файле должны начинаться c имени блока (reviews)
+
+mixin reviews()
+  - const details = [{title: "fun to play", num: 5}, {title: "earnings", num: 3.3}, {title: "Affordability", num: 4.7}, {title: "Easy to Learn", num: 4.5}];
+  - const rate = 3.4;
+
+  .reviews.gl-block.gl-block--gradient
+    .reviews__content
+      .reviews__estimation-wrapper
+        .reviews__estimation-title Reviews
+        .reviews__estimation-num= rate
+        .reviews__estimation-stars-wrapper
+        +rating(rate)
+
+      .reviews__details
+        each detail in details
+          .reviews__detail-wrapper
+            .reviews__detail-title= detail.title
+            .reviews__detail-line-wrapper
+              // `высчитывается: "width: ${Math.ceil(detail.num * 100 / 5)}%"
+              div(style=`width: ${Math.ceil(detail.num * 100 / 5)}%`).reviews__detail-line
+            .reviews__detail-num= Number.isInteger(detail.num) ? `${detail.num}.0` : detail.num

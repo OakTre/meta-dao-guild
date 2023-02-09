@@ -1,0 +1,42 @@
+mixin login()
+  .cosmic.login.overlayscrollbars#login
+    .cosmic__layout
+      .cosmic__header
+        .cosmic__header__logo
+          img(src="/img/logo-2.svg" alt="Meta Dao Guild")
+      form.cosmic__form
+        h1.cosmic__form-header Log in to your account
+        .login__social
+          p Sign in with your account
+          .login__social-links
+            a(href="#" title="Discord").login__discord-link
+            a(href="#" title="Google").login__google-link
+        .login__main-form
+          .login__separator or via E-mail:
+          .cosmic__input-container(data-input-container)
+            input(
+              type="email"
+              name="email"
+              placeholder="Your E-mail"
+              data-required="This field is required"
+              data-email="Enter valid email"
+            )
+            .cosmic__input-error(data-input-error)
+          .cosmic__input-container(data-input-container)
+            input(
+              type="password"
+              name="password"
+              placeholder="Password"
+              data-required="This field is required"
+            )
+            .cosmic__input-error(data-input-error)
+          .login__forgot-password
+            a(href="#") Forgot your password?
+        .cosmic__actions
+          button.login__submit-btn(type="submit") Log in to account
+      .login__layout-spacer
+      .cosmic__footer
+        p Contact email for partnership:
+          a(href="mailto:pr@metadao.gg")  pr@metadao.gg
+        p Support:
+          a(href="mailto:support@metadao.gg")  support@metadao.gg

@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html class="page  no-js" lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="date=no">
+  <meta name="format-detection" content="address=no">
+  <meta name="format-detection" content="email=no">
+  <meta content="notranslate" name="google">
+  <link rel="icon" sizes="180x180" href="img/logo.png">
+  <title>Page 2</title>
+  <meta name="description" content="">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+// Убрать на html класс "no-js", добавить класс "js": с уровня стилей знаем работает ли JS
+document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+
+// Браузер и ОС
+function cth(c){document.documentElement.classList.add(c)}
+'ontouchstart' in window?cth('touch'):cth('no-touch');
+if(typeof InstallTrigger!=='undefined')cth('firefox');
+if(/constructor/i.test(window.HTMLElement)||(function(p){return p.toString()==="[object SafariRemoteNotification]"})(!window['safari']||(typeof safari!=='undefined'&&safari.pushNotification)))cth('safari');
+if(/*@cc_on!@*/false||!!document.documentMode)cth('ie');
+if(!(/*@cc_on!@*/false||!!document.documentMode)&&!!window.StyleMedia)cth('edge');
+if(!!window.chrome&&(!!window.chrome.webstore||!!window.chrome.runtime))cth('chrome');
+if(~navigator.appVersion.indexOf("Win"))cth('windows');
+if(~navigator.appVersion.indexOf("Mac"))cth('osx');
+if(~['iPad','iPhone','iPod'].indexOf(navigator.platform))cth('ios');
+if(~navigator.appVersion.indexOf("Linux"))cth('linux');
+
+// Добавление 1vh (использование: height: 100vh; height: calc(var(--vh, 1vh) * 100);) для фикса 100vh на мобилках
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+window.addEventListener('resize', () => {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
+</script>
+</head>
+
+<body>
+  <div class="gl-layout-container overlayscrollbars">
+    <header class="header" id="header-host">
+      <div class="gl-page-content">
+        <div class="header__content-wrapper">
+          <div class="header__nav-links-wrapper gl-hg-hide"><a class="header__nav-link--guild header__nav-link" href="https://metadao.gg">guild</a><a class="header__nav-link--active header__nav-link" href="/games.html">games</a><a class="header__nav-link" href="" disabled="disabled">nft</a><a class="header__nav-link" href="" disabled="disabled">airdrop</a><a class="header__nav-link" href="" disabled="disabled">news</a></div><a class="header__logo-link" href="/"><img class="header__logo" loading="lazy" src="img/logo.svg" alt="logo-header" width="220" height="110" /></a>
+          <div class="header__btns-login-wrapper"><a class="header__btn gl-hg-hide" href="/login-block.html">Log in</a><a class="header__btn gl-hg-hide" href="/signup.html">Sign up</a><a class="header__btn gl-hg-show" href="/login-block.html"><img class="header__login-icon" loading="lazy" src="img/profile.svg" alt="login-block-icon" width="20" height="20" /></a></div>
+          <div class="header__btn-connect-wrapper gl-hg-hide"><button class="header__btn header__btn--blue" type="button">connect wallet</button></div><!-- языковой селект--><!--.header__lang-wrapper--><!--  +lang-select()-->
+          <div class="header__burger-btn-wrapper gl-hg-show"><button class="header__burger-btn" type="button" id="btn-burger"></button></div>
+        </div>
+      </div>
+    </header>
+    <div class="gl-layout-content">
+      <div class="gl-bread-crumbs--main">
+        <div class="bread-crumbs">
+          <div class="gl-page-content">
+            <ul class="bread-crumbs__container">
+              <li><a class="bread-crumbs__item bread-crumbs__item--link" href="#">Meta DAO</a></li>
+              <li><a class="bread-crumbs__item bread-crumbs__item--link" href="#">discover games</a></li>
+              <li>
+                <div class="bread-crumbs__item">games</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="gl-page-content">
+        <div class="gl-grid-container-24">
+          <div class="slider-broadcast" id="slider-broadcast-host">
+            <div class="slider-broadcast__content">
+              <div class="slider-broadcast__swiper-container gl-swiper swiper-container" data-swiper-container="data-swiper-container">
+                <div class="gl-swiper__swiper-wrapper swiper-wrapper">
+                  <div class="slider-broadcast__swiper-slide swiper-slide"><a class="slider-broadcast__swiper-link" href=""><img class="slider-broadcast__slide-logo" loading="lazy" src="img/logos/logo-1.svg" alt="image" width="26" height="26" />
+                      <div class="slider-broadcast__slide-mark slider-broadcast__slide-mark--blue">Dev.</div>
+                      <picture>
+                        <source srcset="img/data-jpegs/slider-broadcast/1.webp" type="image/webp" /><img class="slider-broadcast__swiper-image" loading="lazy" src="img/data-jpegs/slider-broadcast/1.jpg" alt="image" width="413" height="190" />
+                      </picture>
+                    </a></div>
+                  <div class="slider-broadcast__swiper-slide swiper-slide"><a class="slider-broadcast__swiper-link" href=""><img class="slider-broadcast__slide-logo" loading="lazy" src="img/logos/logo-2.svg" alt="image" width="26" height="26" />
+                      <div class="slider-broadcast__slide-mark slider-broadcast__slide-mark--green">Live</div>
+                      <picture>
+                        <source srcset="img/data-jpegs/slider-broadcast/2.webp" type="image/webp" /><img class="slider-broadcast__swiper-image" loading="lazy" src="img/data-jpegs/slider-broadcast/2.jpg" alt="image" width="413" height="190" />
+                      </picture>
+                    </a></div>
+                  <div class="slider-broadcast__swiper-slide swiper-slide"><a class="slider-broadcast__swiper-link" href=""><img class="slider-broadcast__slide-logo" loading="lazy" src="img/logos/logo-2.svg" alt="image" width="26" height="26" />
+                      <div class="slider-broadcast__slide-mark slider-broadcast__slide-mark--blue">Dev.</div>
+                      <picture>
+                        <source srcset="img/data-jpegs/slider-broadcast/3.webp" type="image/webp" /><img class="slider-broadcast__swiper-image" loading="lazy" src="img/data-jpegs/slider-broadcast/3.jpg" alt="image" width="413" height="190" />
+                      </picture>
+                    </a></div>
+                </div>
+              </div>
+              <div class="slider-broadcast__swiper-btns-wrapper"><button class="gl-swiper__btn-nav gl-swiper__btn-nav--prev" data-btn-prev="data-btn-prev"></button><button class="gl-swiper__btn-nav gl-swiper__btn-nav--next" data-btn-next="data-btn-next"></button></div>
+            </div>
+          </div>
+          <div class="statistics gl-block gl-block--gradient" id="statistics-host-1">
+            <div class="statistics__header">
+              <div>
+                <h2 class="gl-title gl-title--middle gl-title--uppercase">Guild partners</h2>
+                <div class="gl-subtitle gl-subtitle--big">Our friends and strategic partners in play to earn</div>
+              </div><a class="statistics__more-link" href="">more</a>
+            </div>
+            <div class="swiper gl-swiper swiper-container" id="js-swiper-container">
+              <div class="statistics__swiper-wrapper gl-swiper__swiper-wrapper swiper-wrapper">
+                <div class="swiper-slide js-swiper-slide overlayscrollbars">
+                  <table class="statistics__table-container">
+                    <thead class="statistics__table-head">
+                      <tr class="statistics__table-row">
+                        <th class="statistics__table-head-title">Name</th>
+                        <th class="statistics__table-head-title">Status</th>
+                        <th class="statistics__table-head-title">F2P</th>
+                        <th class="statistics__table-head-title">Scholarship</th>
+                        <th class="statistics__table-head-title">Subscribe</th>
+                      </tr>
+                    </thead>
+                    <tbody class="statistics__table-body-wrapper">
+                      <tr class="statistics__table-row">
+                        <td class="statistics__table-cell" align="center"><a class="statistics__cell-link" href="">
+                            <picture>
+                              <source srcset="img/data-jpegs/partners/1.webp" type="image/webp" /><img class="statistics__cell-img" loading="lazy" src="img/data-jpegs/partners/1.png" alt="image" width="30" height="30" />
+                            </picture>
+                            <div class="statistics__cell-name">WonderHero</div>
+                          </a></td>
+                        <td class="statistics__table-cell--green statistics__table-cell">Live</td>
+                        <td class="statistics__table-cell">Yes</td>
+                        <td class="statistics__table-cell">No</td>
+                        <td class="statistics__table-cell statistics__table-cell--left">
+                          <form class="gl-subscribe-form"><label class="gl-subscribe-input-wrapper"><input class="gl-subscribe-input" type="checkbox" name="subscribe" />
+                              <div class="gl-subscribe-input-content"></div>
+                            </label></form>
+                        </td>
+                      </tr>
+                      <tr class="statistics__table-row">
+                        <td class="statistics__table-cell" align="center"><a class="statistics__cell-link" href="">
+                            <picture>
+                              <source srcset="img/data-jpegs/partners/2.webp" type="image/webp" /><img class="statistics__cell-img" loading="lazy" src="img/data-jpegs/partners/2.png" alt="image" width="30" height="30" />
+                            </picture>
+                            <div class="statistics__cell-name">The Walking Dead Empires</div>
+                          </a></td>
+                        <td class="statistics__table-cell--blue statistics__table-cell">Dev.</td>
+                        <td class="statistics__table-cell">No</td>
+                        <td class="statistics__table-cell">Soon</td>
+                        <td class="statistics__table-cell statistics__table-cell--left">
+                          <form class="gl-subscribe-form"><label class="gl-subscribe-input-wrapper"><input class="gl-subscribe-input" type="checkbox" name="subscribe" checked="checked" />
+                              <div class="gl-subscribe-input-content"></div>
+                            </label></form>
+                        </td>
+                      </tr>
+                      <tr class="statistics__table-row">
+                        <td class="statistics__table-cell" align="center"><a class="statistics__cell-link" href="">
+                            <picture>
+                              <source srcset="img/data-jpegs/partners/3.webp" type="image/webp" /><img class="statistics__cell-img" loading="lazy" src="img/data-jpegs/partners/3.png" alt="image" width="30" height="30" />
+                            </picture>
+                            <div class="statistics__cell-name">Last Expedition</div>
+                          </a></td>
+                        <td class="statistics__table-cell--green statistics__table-cell">Live</td>
+                        <td class="statistics__table-cell">No</td>
+                        <td class="statistics__table-cell">Yes</td>
+                        <td class="statistics__table-cell statistics__table-cell--left">
+                          <form class="gl-subscribe-form"><label class="gl-subscribe-input-wrapper"><input class="gl-subscribe-input" type="checkbox" name="subscribe" />
+                              <div class="gl-subscribe-input-content"></div>
+                            </label></form>
+                        </td>
+                      </tr>
+                      <tr class="statistics__table-row">
+                        <td class="statistics__table-cell" align="center"><a class="statistics__cell-link" href="">
+                            <picture>
+                              <source srcset="img/data-jpegs/partners/4.webp" type="image/webp" /><img class="statistics__cell-img" loading="lazy" src="img/data-jpegs/partners/4.png" alt="image" width="30" height="30" />
+                            </picture>
+                            <div class="statistics__cell-name">Bullieverse</div>
+                          </a></td>
+                        <td class="statistics__table-cell--green statistics__table-cell">Live</td>
+                        <td class="statistics__table-cell">No</td>
+                        <td class="statistics__table-cell">Soon</td>
+                        <td class="statistics__table-cell statistics__table-cell--left">
+                          <form class="gl-subscribe-form"><label class="gl-subscribe-input-wrapper"><input class="gl-subscribe-input" type="checkbox" name="subscribe" />
+                              <div class="gl-subscribe-input-content"></div>
+                            </label></form>
+                        </td>
+                      </tr>
+                      <tr class="statistics__table-row">
+                        <td class="statistics__table-cell" align="center"><a class="statistics__cell-link" href="">
+                            <picture>
+                              <source srcset="img/data-jpegs/partners/5.webp" type="image/webp" /><img class="statistics__cell-img" loading="lazy" src="img/data-jpegs/partners/5.png" alt="image" width="30" height="30" />
+                            </picture>
+                            <div class="statistics__cell-name">PinupWarlords</div>
+                          </a></td>
+                        <td class="statistics__table-cell--orange statistics__table-cell">Presale</td>
+                        <td class="statistics__table-cell">No</td>
+                        <td class="statistics__table-cell">No</td>
+                        <td class="statistics__table-cell statistics__table-cell--left">
+                          <form class="gl-subscribe-form"><label class="gl-subscribe-input-wrapper"><input class="gl-subscribe-input" type="checkbox" name="subscribe" checked="checked" />
+                              <div class="gl-subscribe-input-content"></div>
+                            </label></form>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="swiper-slide js-swiper-slide overlayscrollbars">
+                  <table class="statistics__table-container">
+                    <thead class="statistics__table-head">
+                      <tr class="statistics__table-row">
+                        <th class="statistics__table-head-title">Name</th>
+                        <th class="statistics__table-head-title">Status</th>
+                        <th class="statistics__table-head-title">F2P</th>
+                        <th class="statistics__table-head-title">Scholarship</th>
+                        <th class="statistics__table-head-title">Subscribe</th>
+                      </tr>
+                    </thead>
+                    <tbody class="statistics__table-body-wrapper">
+                      <tr class="statistics__table-row">
+                        <td class="statistics__table-cell" align="center"><a class="statistics__cell-link" href="">
+                            <picture>
+                              <source srcset="img/data-jpegs/partners/1.webp" type="image/webp" /><img class="statistics__cell-img" loading="lazy" src="img/data-jpegs/partners/1.png" alt="image" width="30" height="30" />
+                            </picture>
+                            <div class="statistics__cell-name">WonderHero</div>
+                          </a></td>
+                        <td class="statistics__table-cell--green statistics__table-cell">Live</td>
+                        <td class="statistics__table-cell">Yes</td>
+                        <td class="statistics__table-cell">No</td>
+                        <td class="statistics__table-cell statistics__table-cell--left">
+                          <form class="gl-subscribe-form"><label class="gl-subscribe-input-wrapper"><input class="gl-subscribe-input" type="checkbox" name="subscribe" />
+                              <div class="gl-subscribe-input-content"></div>
+                            </label></form>
+                        </td>
+                      </tr>
+                      <tr class="statistics__table-row">
+                        <td class="statistics__table-cell" align="center"><a class="statistics__cell-link" href="">
+                            <picture>
+                              <source srcset="img/data-jpegs/partners/2.webp" type="image/webp" /><img class="statistics__cell-img" loading="lazy" src="img/data-jpegs/partners/2.png" alt="image" width="30" height="30" />
+                            </picture>
+                            <div class="statistics__cell-name">The Walking Dead Empires</div>
+                          </a></td>
+                        <td class="statistics__table-cell--blue statistics__table-cell">Dev.</td>
+                        <td class="statistics__table-cell">No</td>
+                        <td class="statistics__table-cell">Soon</td>
+                        <td class="statistics__table-cell statistics__table-cell--left">
+                          <form class="gl-subscribe-form"><label class="gl-subscribe-input-wrapper"><input class="gl-subscribe-input" type="checkbox" name="subscribe" checked="checked" />
+                              <div class="gl-subscribe-input-content"></div>
+                            </label></form>
+                        </td>
+                      </tr>
+                      <tr class="statistics__table-row">
+                        <td class="statistics__table-cell" align="center"><a class="statistics__cell-link" href="">
+                            <picture>
+                              <source srcset="img/data-jpegs/partners/3.webp" type="image/webp" /><img class="statistics__cell-img" loading="lazy" src="img/data-jpegs/partners/3.png" alt="image" width="30" height="30" />
+                            </picture>
+                            <div class="statistics__cell-name">Last Expedition</div>
+                          </a></td>
+                        <td class="statistics__table-cell--green statistics__table-cell">Live</td>
+                        <td class="statistics__table-cell">No</td>
+                        <td class="statistics__table-cell">Yes</td>
+                        <td class="statistics__table-cell statistics__table-cell--left">
+                          <form class="gl-subscribe-form"><label class="gl-subscribe-input-wrapper"><input class="gl-subscribe-input" type="checkbox" name="subscribe" />
+                              <div class="gl-subscribe-input-content"></div>
+                            </label></form>
+                        </td>
+                      </tr>
+                      <tr class="statistics__table-row">
+                        <td class="statistics__table-cell" align="center"><a class="statistics__cell-link" href="">
+                            <picture>
+                              <source srcset="img/data-jpegs/partners/4.webp" type="image/webp" /><img class="statistics__cell-img" loading="lazy" src="img/data-jpegs/partners/4.png" alt="image" width="30" height="30" />
+                            </picture>
+                            <div class="statistics__cell-name">Bullieverse</div>
+                          </a></td>
+                        <td class="statistics__table-cell--green statistics__table-cell">Live</td>
+                        <td class="statistics__table-cell">No</td>
+                        <td class="statistics__table-cell">Soon</td>
+                        <td class="statistics__table-cell statistics__table-cell--left">
+                          <form class="gl-subscribe-form"><label class="gl-subscribe-input-wrapper"><input class="gl-subscribe-input" type="checkbox" name="subscribe" />
+                              <div class="gl-subscribe-input-content"></div>
+                            </label></form>
+                        </td>
+                      </tr>
+                      <tr class="statistics__table-row">
+                        <td class="statistics__table-cell" align="center"><a class="statistics__cell-link" href="">
+                            <picture>
+                              <source srcset="img/data-jpegs/partners/5.webp" type="image/webp" /><img class="statistics__cell-img" loading="lazy" src="img/data-jpegs/partners/5.png" alt="image" width="30" height="30" />
+                            </picture>
+                            <div class="statistics__cell-name">PinupWarlords</div>
+                          </a></td>
+                        <td class="statistics__table-cell--orange statistics__table-cell">Presale</td>
+                        <td class="statistics__table-cell">No</td>
+                        <td class="statistics__table-cell">No</td>
+                        <td class="statistics__table-cell statistics__table-cell--left">
+                          <form class="gl-subscribe-form"><label class="gl-subscribe-input-wrapper"><input class="gl-subscribe-input" type="checkbox" name="subscribe" checked="checked" />
+                              <div class="gl-subscribe-input-content"></div>
+                            </label></form>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="swiper-slide js-swiper-slide overlayscrollbars">
+                  <table class="statistics__table-container">
+                    <thead class="statistics__table-head">
+                      <tr class="statistics__table-row">
+                        <th class="statistics__table-head-title">Name</th>
+                        <th class="statistics__table-head-title">Status</th>
+                        <th class="statistics__table-head-title">F2P</th>
+                        <th class="statistics__table-head-title">Scholarship</th>
+                        <th class="statistics__table-head-title">Subscribe</th>
+                      </tr>
+                    </thead>
+                    <tbody class="statistics__table-body-wrapper">
+                      <tr class="statistics__table-row">
+                        <td class="statistics__table-cell" align="center"><a class="statistics__cell-link" href="">
+                            <picture>
+                              <source srcset="img/data-jpegs/partners/1.webp" type="image/webp" /><img class="statistics__cell-img" loading="lazy" src="img/data-jpegs/partners/1.png" alt="image" width="30" height="30" />
+                            </picture>
+                            <div class="statistics__cell-name">WonderHero</div>
+                          </a></td>
+                        <td class="statistics__table-cell--green statistics__table-cell">Live</td>
+                        <td class="statistics__table-cell">Yes</td>
+                        <td class="statistics__table-cell">No</td>
+                        <td class="statistics__table-cell statistics__table-cell--left">
+                          <form class="gl-subscribe-form"><label class="gl-subscribe-input-wrapper"><input class="gl-subscribe-input" type="checkbox" name="subscribe" />
+                              <div class="gl-subscribe-input-content"></div>
+                            </label></form>
+                        </td>
+                      </tr>
+                      <tr class="statistics__table-row">
+                        <td class="statistics__table-cell" align="center"><a class="statistics__cell-link" href="">
+                            <picture>
+                              <source srcset="img/data-jpegs/partners/2.webp" type="image/webp" /><img class="statistics__cell-img" loading="lazy" src="img/data-jpegs/partners/2.png" alt="image" width="30" height="30" />
+                            </picture>
+                            <div class="statistics__cell-name">The Walking Dead Empires</div>
+                          </a></td>
+                        <td class="statistics__table-cell--blue statistics__table-cell">Dev.</td>
+                        <td class="statistics__table-cell">No</td>
+                        <td class="statistics__table-cell">Soon</td>
+                        <td class="statistics__table-cell statistics__table-cell--left">
+                          <form class="gl-subscribe-form"><label class="gl-subscribe-input-wrapper"><input class="gl-subscribe-input" type="checkbox" name="subscribe" checked="checked" />
+                              <div class="gl-subscribe-input-content"></div>
+                            </label></form>
+                        </td>
+                      </tr>
+                      <tr class="statistics__table-row">
+                        <td class="statistics__table-cell" align="center"><a class="statistics__cell-link" href="">
+                            <picture>
+                              <source srcset="img/data-jpegs/partners/3.webp" type="image/webp" /><img class="statistics__cell-img" loading="lazy" src="img/data-jpegs/partners/3.png" alt="image" width="30" height="30" />
+                            </picture>
+                            <div class="statistics__cell-name">Last Expedition</div>
+                          </a></td>
+                        <td class="statistics__table-cell--green statistics__table-cell">Live</td>
+                        <td class="statistics__table-cell">No</td>
+                        <td class="statistics__table-cell">Yes</td>
+                        <td class="statistics__table-cell statistics__table-cell--left">
+                          <form class="gl-subscribe-form"><label class="gl-subscribe-input-wrapper"><input class="gl-subscribe-input" type="checkbox" name="subscribe" />
+                              <div class="gl-subscribe-input-content"></div>
+                            </label></form>
+                        </td>
+                      </tr>
+                      <tr class="statistics__table-row">
+                        <td class="statistics__table-cell" align="center"><a class="statistics__cell-link" href="">
+                            <picture>
+                              <source srcset="img/data-jpegs/partners/4.webp" type="image/webp" /><img class="statistics__cell-img" loading="lazy" src="img/data-jpegs/partners/4.png" alt="image" width="30" height="30" />
+                            </picture>
+                            <div class="statistics__cell-name">Bullieverse</div>
+                          </a></td>
+                        <td class="statistics__table-cell--green statistics__table-cell">Live</td>
+                        <td class="statistics__table-cell">No</td>
+                        <td class="statistics__table-cell">Soon</td>
+                        <td class="statistics__table-cell statistics__table-cell--left">
+                          <form class="gl-subscribe-form"><label class="gl-subscribe-input-wrapper"><input class="gl-subscribe-input" type="checkbox" name="subscribe" />
+                              <div class="gl-subscribe-input-content"></div>
+                            </label></form>
+                        </td>
+                      </tr>
+                      <tr class="statistics__table-row">
+                        <td class="statistics__table-cell" align="center"><a class="statistics__cell-link" href="">
+                            <picture>
+                              <source srcset="img/data-jpegs/partners/5.webp" type="image/webp" /><img class="statistics__cell-img" loading="lazy" src="img/data-jpegs/partners/5.png" alt="image" width="30" height="30" />
+                            </picture>
+                            <div class="statistics__cell-name">PinupWarlords</div>
+                          </a></td>
+                        <td class="statistics__table-cell--orange statistics__table-cell">Presale</td>
+                        <td class="statistics__table-cell">No</td>
+                        <td class="statistics__table-cell">No</td>
+                        <td class="statistics__table-cell statistics__table-cell--left">
+                          <form class="gl-subscribe-form"><label class="gl-subscribe-input-wrapper"><input class="gl-subscribe-input" type="checkbox" name="subscribe" checked="checked" />
+                              <div class="gl-subscribe-input-content"></div>
+                            </label></form>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="gl-swiper__pagination-wrapper"><button class="gl-swiper__pagination-btn-nav gl-swiper__pagination-btn-nav--prev" id="js-btn-prev"></button>
+                <div class="reviews-list__swiper-pagination gl-swiper__pagination swiper-pagination" id="js-pagination-slider"></div><button class="gl-swiper__pagination-btn-nav gl-swiper__pagination-btn-nav--next" id="js-btn-next"></button>
+              </div>
+            </div>
+          </div>
+          <div class="statistics statistics--right gl-block gl-block--gradient" id="statistics-host-2">
+            <div class="statistics__header">
+              <div>
+                <h2 class="gl-title gl-title--middle gl-title--uppercase">Top Events</h2>
+                <div class="gl-subtitle gl-subtitle--big">List of events in which you must participate</div>
+              </div><a class="statistics__more-link" href="">more</a>
+            </div>
+            <div class="swiper gl-swiper swiper-container" id="js-swiper-container">
+              <div class="statistics__swiper-wrapper gl-swiper__swiper-wrapper swiper-wrapper">
+                <div class="swiper-slide js-swiper-slide overlayscrollbars">
+                  <table class="statistics__table-container">
+                    <thead class="statistics__table-head">
+                      <tr class="statistics__table-row">
+                        <th class="statistics__table-head-title">Name</th>
+                        <th class="statistics__table-head-title">Events</th>
+                        <th class="statistics__table-head-title">Start</th>
+                        <th class="statistics__table-head-title">End</th>
+                        <th class="statistics__table-head-title">Rewards</th>
+                      </tr>
+                    </thead>
+                    <tbody class="statistics__table-body-wrapper">
+                      <tr class="statistics__table-row">
+                        <td class="statistics__table-cell" align="center"><a class="statistics__cell-link" href="">
+                            <picture>
+                              <source srcset="img/data-jpegs/partners/1.webp" type="image/webp" /><img class="statistics__cell-img" loading="lazy" src="img/data-jpegs/partners/1.png" alt="image" width="30" height="30" />
+                            </picture>
+                            <div class="statistics__cell-name">WonderHero</div>
+                          </a></td>
+                        <td class="statistics__table-cell">Tournament</td>
+                        <td class="statistics__table-cell">08.15.22</td>
+                        <td class="statistics__table-cell">09.15.22</td>
+                        <td class="statistics__table-cell">BUSD</td>
+                      </tr>
+                      <tr class="statistics__table-row">
+                        <td class="statistics__table-cell" align="center"><a class="statistics__cell-link" href="">
+                            <picture>
+                              <source srcset="img/data-jpegs/partners/2.webp" type="image/webp" /><img class="statistics__cell-img" loading="lazy" src="img/data-jpegs/partners/2.png" alt="image" width="30" height="30" />
+                            </picture>
+                            <div class="statistics__cell-name">The Walking Dead Empires</div>
+                          </a></td>
+                        <td class="statistics__table-cell">Giveway</td>
+                        <td class="statistics__table-cell">08.15.22</td>
+                        <td class="statistics__table-cell">09.15.22</td>
+                        <td class="statistics__table-cell">NFT</td>
+                      </tr>
+                      <tr class="statistics__table-row">
+                        <td class="statistics__table-cell" align="center"><a class="statistics__cell-link" href="">
+                            <picture>
+                              <source srcset="img/data-jpegs/partners/3.webp" type="image/webp" /><img class="statistics__cell-img" loading="lazy" src="img/data-jpegs/partners/3.png" alt="image" width="30" height="30" />
+                            </picture>
+                            <div class="statistics__cell-name">Last Expedition</div>
+                          </a></td>
+                        <td class="statistics__table-cell">Airdrop</td>
+                        <td class="statistics__table-cell">08.15.22</td>
+                        <td class="statistics__table-cell">09.15.22</td>
+                        <td class="statistics__table-cell">Token</td>
+                      </tr>
+                      <tr class="statistics__table-row">
+                        <td class="statistics__table-cell" align="center"><a class="statistics__cell-link" href="">
+                            <picture>
+                              <source srcset="img/data-jpegs/partners/4.webp" type="image/webp" /><img class="statistics__cell-img" loading="lazy" src="img/data-jpegs/partners/4.png" alt="image" width="30" height="30" />
+                            </picture>
+                            <div class="statistics__cell-name">Bullieverse</div>
+                          </a></td>
+                        <td class="statistics__table-cell">Tournament</td>
+                        <td class="statistics__table-cell">08.15.22</td>
+                        <td class="statistics__table-cell">TBA</td>
+                        <td class="statistics__table-cell">BUSD</td>
+                      </tr>
+                      <tr class="statistics__table-row">
+                        <td class="statistics__table-cell" align="center"><a class="statistics__cell-link" href="">
+                            <picture>
+                              <source srcset="img/data-jpegs/partners/5.webp" type="image/webp" /><img class="statistics__cell-img" loading="lazy" src="img/data-jpegs/partners/5.png" alt="image" width="30" height="30" />
+                            </picture>
+                            <div class="statistics__cell-name">PinupWarlords</div>
+                          </a></td>
+                        <td class="statistics__table-cell">Giveway</td>
+                        <td class="statistics__table-cell">08.15.22</td>
+                        <td class="statistics__table-cell">09.15.22</td>
+                        <td class="statistics__table-cell">WL</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="swiper-slide js-swiper-slide overlayscrollbars">
+                  <table class="statistics__table-container">
+                    <thead class="statistics__table-head">
+                      <tr class="statistics__table-row">
+                        <th class="statistics__table-head-title">Name</th>
+                        <th class="statistics__table-head-title">Events</th>
+                        <th class="statistics__table-head-title">Start</th>
+                        <th class="statistics__table-head-title">End</th>
+                        <th class="statistics__table-head-title">Rewards</th>
+                      </tr>
+                    </thead>
+                    <tbody class="statistics__table-body-wrapper">
+                      <tr class="statistics__table-row">
+                        <td class="statistics__table-cell" align="center"><a class="statistics__cell-link" href="">
+                            <picture>
+                              <source srcset="img/data-jpegs/partners/1.webp" type="image/webp" /><img class="statistics__cell-img" loading="lazy" src="img/data-jpegs/partners/1.png" alt="image" width="30" height="30" />
+                            </picture>
+                            <div class="statistics__cell-name">WonderHero</div>
+                          </a></td>
+                        <td class="statistics__table-cell">Tournament</td>
+                        <td class="statistics__table-cell">08.15.22</td>
+                        <td class="statistics__table-cell">09.15.22</td>
+                        <td class="statistics__table-cell">BUSD</td>
+                      </tr>
+                      <tr class="statistics__table-row">
+                        <td class="statistics__table-cell" align="center"><a class="statistics__cell-link" href="">
+                            <picture>
+                              <source srcset="img/data-jpegs/partners/2.webp" type="image/webp" /><img class="statistics__cell-img" loading="lazy" src="img/data-jpegs/partners/2.png" alt="image" width="30" height="30" />
+                            </picture>
+                            <div class="statistics__cell-name">The Walking Dead Empires</div>
+                          </a></td>
+                        <td class="statistics__table-cell">Giveway</td>
+                        <td class="statistics__table-cell">08.15.22</td>
+                        <td class="statistics__table-cell">09.15.22</td>
+                        <td class="statistics__table-cell">NFT</td>
+                      </tr>
+                      <tr class="statistics__table-row">
+                        <td class="statistics__table-cell" align="center"><a class="statistics__cell-link" href="">
+                            <picture>
+                              <source srcset="img/data-jpegs/partners/3.webp" type="image/webp" /><img class="statistics__cell-img" loading="lazy" src="img/data-jpegs/partners/3.png" alt="image" width="30" height="30" />
+                            </picture>
+                            <div class="statistics__cell-name">Last Expedition</div>
+                          </a></td>
+                        <td class="statistics__table-cell">Airdrop</td>
+                        <td class="statistics__table-cell">08.15.22</td>
+                        <td class="statistics__table-cell">09.15.22</td>
+                        <td class="statistics__table-cell">Token</td>
+                      </tr>
+                      <tr class="statistics__table-row">
+                        <td class="statistics__table-cell" align="center"><a class="statistics__cell-link" href="">
+                            <picture>
+                              <source srcset="img/data-jpegs/partners/4.webp" type="image/webp" /><img class="statistics__cell-img" loading="lazy" src="img/data-jpegs/partners/4.png" alt="image" width="30" height="30" />
+                            </picture>
+                            <div class="statistics__cell-name">Bullieverse</div>
+                          </a></td>
+                        <td class="statistics__table-cell">Tournament</td>
+                        <td class="statistics__table-cell">08.15.22</td>
+                        <td class="statistics__table-cell">TBA</td>
+                        <td class="statistics__table-cell">BUSD</td>
+                      </tr>
+                      <tr class="statistics__table-row">
+                        <td class="statistics__table-cell" align="center"><a class="statistics__cell-link" href="">
+                            <picture>
+                              <source srcset="img/data-jpegs/partners/5.webp" type="image/webp" /><img class="statistics__cell-img" loading="lazy" src="img/data-jpegs/partners/5.png" alt="image" width="30" height="30" />
+                            </picture>
+                            <div class="statistics__cell-name">PinupWarlords</div>
+                          </a></td>
+                        <td class="statistics__table-cell">Giveway</td>
+                        <td class="statistics__table-cell">08.15.22</td>
+                        <td class="statistics__table-cell">09.15.22</td>
+                        <td class="statistics__table-cell">WL</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="swiper-slide js-swiper-slide overlayscrollbars">
+                  <table class="statistics__table-container">
+                    <thead class="statistics__table-head">
+                      <tr class="statistics__table-row">
+                        <th class="statistics__table-head-title">Name</th>
+                        <th class="statistics__table-head-title">Events</th>
+                        <th class="statistics__table-head-title">Start</th>
+                        <th class="statistics__table-head-title">End</th>
+                        <th class="statistics__table-head-title">Rewards</th>
+                      </tr>
+                    </thead>
+                    <tbody class="statistics__table-body-wrapper">
+                      <tr class="statistics__table-row">
+                        <td class="statistics__table-cell" align="center"><a class="statistics__cell-link" href="">
+                            <picture>
+                              <source srcset="img/data-jpegs/partners/1.webp" type="image/webp" /><img class="statistics__cell-img" loading="lazy" src="img/data-jpegs/partners/1.png" alt="image" width="30" height="30" />
+                            </picture>
+                            <div class="statistics__cell-name">WonderHero</div>
+                          </a></td>
+                        <td class="statistics__table-cell">Tournament</td>
+                        <td class="statistics__table-cell">08.15.22</td>
+                        <td class="statistics__table-cell">09.15.22</td>
+                        <td class="statistics__table-cell">BUSD</td>
+                      </tr>
+                      <tr class="statistics__table-row">
+                        <td class="statistics__table-cell" align="center"><a class="statistics__cell-link" href="">
+                            <picture>
+                              <source srcset="img/data-jpegs/partners/2.webp" type="image/webp" /><img class="statistics__cell-img" loading="lazy" src="img/data-jpegs/partners/2.png" alt="image" width="30" height="30" />
+                            </picture>
+                            <div class="statistics__cell-name">The Walking Dead Empires</div>
+                          </a></td>
+                        <td class="statistics__table-cell">Giveway</td>
+                        <td class="statistics__table-cell">08.15.22</td>
+                        <td class="statistics__table-cell">09.15.22</td>
+                        <td class="statistics__table-cell">NFT</td>
+                      </tr>
+                      <tr class="statistics__table-row">
+                        <td class="statistics__table-cell" align="center"><a class="statistics__cell-link" href="">
+                            <picture>
+                              <source srcset="img/data-jpegs/partners/3.webp" type="image/webp" /><img class="statistics__cell-img" loading="lazy" src="img/data-jpegs/partners/3.png" alt="image" width="30" height="30" />
+                            </picture>
+                            <div class="statistics__cell-name">Last Expedition</div>
+                          </a></td>
+                        <td class="statistics__table-cell">Airdrop</td>
+                        <td class="statistics__table-cell">08.15.22</td>
+                        <td class="statistics__table-cell">09.15.22</td>
+                        <td class="statistics__table-cell">Token</td>
+                      </tr>
+                      <tr class="statistics__table-row">
+                        <td class="statistics__table-cell" align="center"><a class="statistics__cell-link" href="">
+                            <picture>
+                              <source srcset="img/data-jpegs/partners/4.webp" type="image/webp" /><img class="statistics__cell-img" loading="lazy" src="img/data-jpegs/partners/4.png" alt="image" width="30" height="30" />
+                            </picture>
+                            <div class="statistics__cell-name">Bullieverse</div>
+                          </a></td>
+                        <td class="statistics__table-cell">Tournament</td>
+                        <td class="statistics__table-cell">08.15.22</td>
+                        <td class="statistics__table-cell">TBA</td>
+                        <td class="statistics__table-cell">BUSD</td>
+                      </tr>
+                      <tr class="statistics__table-row">
+                        <td class="statistics__table-cell" align="center"><a class="statistics__cell-link" href="">
+                            <picture>
+                              <source srcset="img/data-jpegs/partners/5.webp" type="image/webp" /><img class="statistics__cell-img" loading="lazy" src="img/data-jpegs/partners/5.png" alt="image" width="30" height="30" />
+                            </picture>
+                            <div class="statistics__cell-name">PinupWarlords</div>
+                          </a></td>
+                        <td class="statistics__table-cell">Giveway</td>
+                        <td class="statistics__table-cell">08.15.22</td>
+                        <td class="statistics__table-cell">09.15.22</td>
+                        <td class="statistics__table-cell">WL</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="gl-swiper__pagination-wrapper"><button class="gl-swiper__pagination-btn-nav gl-swiper__pagination-btn-nav--prev" id="js-btn-prev"></button>
+                <div class="reviews-list__swiper-pagination gl-swiper__pagination swiper-pagination" id="js-pagination-slider"></div><button class="gl-swiper__pagination-btn-nav gl-swiper__pagination-btn-nav--next" id="js-btn-next"></button>
+              </div>
+            </div>
+          </div>
+          <div class="filters gl-block gl-block--dark" id="filters-host">
+            <div class="filters__title-wrapper">
+              <h2 class="gl-title gl-title--middle gl-title--uppercase">P2E Games List</h2>
+              <div class="gl-subtitle">В блоке доступна информация о регистрации партнеров и их приобретении токена MDGG</div>
+            </div>
+            <div class="filters__panel-container" id="toggle-show-container">
+              <div class="filters__panel-header">
+                <div class="filters__panel-title gl-mb-hide">
+                  <div class="filters__panel-lines-wrapper">
+                    <div class="filters__panel-line"></div>
+                    <div class="filters__panel-line"></div>
+                    <div class="filters__panel-line"></div>
+                  </div>Filters
+                </div>
+                <div class="filters__header-btns-wrapper"><button class="filters__btn-reset" type="button" id="filter-btn-reset">Reset Filters</button><button class="filters__btn-hide js-toggle-show-btn" type="button"></button></div>
+              </div>
+              <form class="filters__form-container js-toggle-show-container" data-form="data-form">
+                <div class="filters__form-wrapper js-toggle-show-wrapper">
+                  <div class="filters__block filters__block--hg-full">
+                    <div class="filters__block-title">Genre</div>
+                    <div class="filters__checkboxes-col-4"><label class="gl-checkbox-wrapper"><input class="gl-checkbox js-checkbox" type="checkbox" name="genre" value="Action" /><span class="gl-checkbox-content gl-checkbox-content--nowrap"><span class="gl-checkbox-content-mark"></span><span>Action</span></span></label><label class="gl-checkbox-wrapper"><input class="gl-checkbox js-checkbox" type="checkbox" name="genre" value="Breeding" /><span class="gl-checkbox-content gl-checkbox-content--nowrap"><span class="gl-checkbox-content-mark"></span><span>Breeding</span></span></label><label class="gl-checkbox-wrapper"><input class="gl-checkbox js-checkbox" type="checkbox" name="genre" value="Minigame" /><span class="gl-checkbox-content gl-checkbox-content--nowrap"><span class="gl-checkbox-content-mark"></span><span>Minigame</span></span></label><label class="gl-checkbox-wrapper"><input class="gl-checkbox js-checkbox" type="checkbox" name="genre" value="MMORPG" /><span class="gl-checkbox-content gl-checkbox-content--nowrap"><span class="gl-checkbox-content-mark"></span><span>MMORPG</span></span></label><label class="gl-checkbox-wrapper"><input class="gl-checkbox js-checkbox" type="checkbox" name="genre" value="Adventure" /><span class="gl-checkbox-content gl-checkbox-content--nowrap"><span class="gl-checkbox-content-mark"></span><span>Adventure</span></span></label><label class="gl-checkbox-wrapper"><input class="gl-checkbox js-checkbox" type="checkbox" name="genre" value="Building" /><span class="gl-checkbox-content gl-checkbox-content--nowrap"><span class="gl-checkbox-content-mark"></span><span>Building</span></span></label><label class="gl-checkbox-wrapper"><input class="gl-checkbox js-checkbox" type="checkbox" name="genre" value="MOBA" /><span class="gl-checkbox-content gl-checkbox-content--nowrap"><span class="gl-checkbox-content-mark"></span><span>MOBA</span></span></label><label class="gl-checkbox-wrapper"><input class="gl-checkbox js-checkbox" type="checkbox" name="genre" value="Shooter" /><span class="gl-checkbox-content gl-checkbox-content--nowrap"><span class="gl-checkbox-content-mark"></span><span>Shooter</span></span></label><label class="gl-checkbox-wrapper"><input class="gl-checkbox js-checkbox" type="checkbox" name="genre" value="Arcade" /><span class="gl-checkbox-content gl-checkbox-content--nowrap"><span class="gl-checkbox-content-mark"></span><span>Arcade</span></span></label><label class="gl-checkbox-wrapper"><input class="gl-checkbox js-checkbox" type="checkbox" name="genre" value="Card" /><span class="gl-checkbox-content gl-checkbox-content--nowrap"><span class="gl-checkbox-content-mark"></span><span>Card</span></span></label><label class="gl-checkbox-wrapper"><input class="gl-checkbox js-checkbox" type="checkbox" name="genre" value="M2E" /><span class="gl-checkbox-content gl-checkbox-content--nowrap"><span class="gl-checkbox-content-mark"></span><span>M2E</span></span></label><label class="gl-checkbox-wrapper"><input class="gl-checkbox js-checkbox" type="checkbox" name="genre" value="Sports" /><span class="gl-checkbox-content gl-checkbox-content--nowrap"><span class="gl-checkbox-content-mark"></span><span>Sports</span></span></label><label class="gl-checkbox-wrapper"><input class="gl-checkbox js-checkbox" type="checkbox" name="genre" value="AR" /><span class="gl-checkbox-content gl-checkbox-content--nowrap"><span class="gl-checkbox-content-mark"></span><span>AR</span></span></label><label class="gl-checkbox-wrapper"><input class="gl-checkbox js-checkbox" type="checkbox" name="genre" value="Collectible" /><span class="gl-checkbox-content gl-checkbox-content--nowrap"><span class="gl-checkbox-content-mark"></span><span>Collectible</span></span></label><label class="gl-checkbox-wrapper"><input class="gl-checkbox js-checkbox" type="checkbox" name="genre" value="PVE" /><span class="gl-checkbox-content gl-checkbox-content--nowrap"><span class="gl-checkbox-content-mark"></span><span>PVE</span></span></label><label class="gl-checkbox-wrapper"><input class="gl-checkbox js-checkbox" type="checkbox" name="genre" value="Strategy" /><span class="gl-checkbox-content gl-checkbox-content--nowrap"><span class="gl-checkbox-content-mark"></span><span>Strategy</span></span></label><label class="gl-checkbox-wrapper"><input class="gl-checkbox js-checkbox" type="checkbox" name="genre" value="Auto-Battler" /><span class="gl-checkbox-content gl-checkbox-content--nowrap"><span class="gl-checkbox-content-mark"></span><span>Auto-Battler</span></span></label><label class="gl-checkbox-wrapper"><input class="gl-checkbox js-checkbox" type="checkbox" name="genre" value="Fighting" /><span class="gl-checkbox-content gl-checkbox-content--nowrap"><span class="gl-checkbox-content-mark"></span><span>Fighting</span></span></label><label class="gl-checkbox-wrapper"><input class="gl-checkbox js-checkbox" type="checkbox" name="genre" value="PVP" /><span class="gl-checkbox-content gl-checkbox-content--nowrap"><span class="gl-checkbox-content-mark"></span><span>PVP</span></span></label><label class="gl-checkbox-wrapper"><input class="gl-checkbox js-checkbox" type="checkbox" name="genre" value="VR" /><span class="gl-checkbox-content gl-checkbox-content--nowrap"><span class="gl-checkbox-content-mark"></span><span>VR</span></span></label><label class="gl-checkbox-wrapper"><input class="gl-checkbox js-checkbox" type="checkbox" name="genre" value="Battle-Royale" /><span class="gl-checkbox-content gl-checkbox-content--nowrap"><span class="gl-checkbox-content-mark"></span><span>Battle-Royale</span></span></label><label class="gl-checkbox-wrapper"><input class="gl-checkbox js-checkbox" type="checkbox" name="genre" value="Horror" /><span class="gl-checkbox-content gl-checkbox-content--nowrap"><span class="gl-checkbox-content-mark"></span><span>Horror</span></span></label><label class="gl-checkbox-wrapper"><input class="gl-checkbox js-checkbox" type="checkbox" name="genre" value="Racing" /><span class="gl-checkbox-content gl-checkbox-content--nowrap"><span class="gl-checkbox-content-mark"></span><span>Racing</span></span></label><label class="gl-checkbox-wrapper"><input class="gl-checkbox js-checkbox" type="checkbox" name="genre" value="Other" /><span class="gl-checkbox-content gl-checkbox-content--nowrap"><span class="gl-checkbox-content-mark"></span><span>Other</span></span></label></div>
+                  </div>
+                  <div class="filters__block">
+                    <div class="filters__block-title">Blockchain</div>
+                    <div class="filters__checkboxes-flex-wrap"><label class="filters__flex gl-checkbox-full-wrapper"><input class="gl-checkbox-full js-checkbox" type="checkbox" name="blockchain" value="BSC" /><span class="gl-checkbox-full-content"><img class="gl-checkbox-full-content-icon" loading="lazy" src="./img/blockchain/bsc.svg" alt="image" width="18" height="18"/><span>BSC</span></span></label><label class="filters__flex gl-checkbox-full-wrapper"><input class="gl-checkbox-full js-checkbox" type="checkbox" name="blockchain" value="Ethereum" /><span class="gl-checkbox-full-content"><img class="gl-checkbox-full-content-icon" loading="lazy" src="./img/blockchain/ethereum.svg" alt="image" width="18" height="18"/><span>Ethereum</span></span></label><label class="filters__flex gl-checkbox-full-wrapper"><input class="gl-checkbox-full js-checkbox" type="checkbox" name="blockchain" value="Polygon" /><span class="gl-checkbox-full-content"><img class="gl-checkbox-full-content-icon" loading="lazy" src="./img/blockchain/polygon.svg" alt="image" width="18" height="18"/><span>Polygon</span></span></label><label class="filters__flex gl-checkbox-full-wrapper"><input class="gl-checkbox-full js-checkbox" type="checkbox" name="blockchain" value="immutable X" /><span class="gl-checkbox-full-content"><img class="gl-checkbox-full-content-icon" loading="lazy" src="./img/blockchain/immutable.svg" alt="image" width="18" height="18"/><span>immutable X</span></span></label><label class="filters__flex gl-checkbox-full-wrapper"><input class="gl-checkbox-full js-checkbox" type="checkbox" name="blockchain" value="Solana" /><span class="gl-checkbox-full-content"><img class="gl-checkbox-full-content-icon" loading="lazy" src="./img/blockchain/solana.svg" alt="image" width="18" height="18"/><span>Solana</span></span></label><label class="filters__flex gl-checkbox-full-wrapper"><input class="gl-checkbox-full js-checkbox" type="checkbox" name="blockchain" value="Near" /><span class="gl-checkbox-full-content"><img class="gl-checkbox-full-content-icon" loading="lazy" src="./img/blockchain/near.svg" alt="image" width="18" height="18"/><span>Near</span></span></label><label class="filters__flex gl-checkbox-full-wrapper"><input class="gl-checkbox-full js-checkbox" type="checkbox" name="blockchain" value="Waves" /><span class="gl-checkbox-full-content"><img class="gl-checkbox-full-content-icon" loading="lazy" src="./img/blockchain/waves.svg" alt="image" width="18" height="18"/><span>Waves</span></span></label><label class="filters__flex gl-checkbox-full-wrapper"><input class="gl-checkbox-full js-checkbox" type="checkbox" name="blockchain" value="TRON" /><span class="gl-checkbox-full-content"><img class="gl-checkbox-full-content-icon" loading="lazy" src="./img/blockchain/tron.svg" alt="image" width="18" height="18"/><span>TRON</span></span></label><label class="filters__flex gl-checkbox-full-wrapper"><input class="gl-checkbox-full js-checkbox" type="checkbox" name="blockchain" value="Gala-Games" /><span class="gl-checkbox-full-content"><img class="gl-checkbox-full-content-icon" loading="lazy" src="./img/blockchain/gala-games.svg" alt="image" width="18" height="18"/><span>Gala-Games</span></span></label><label class="filters__flex gl-checkbox-full-wrapper"><input class="gl-checkbox-full js-checkbox" type="checkbox" name="blockchain" value="Avalanche" /><span class="gl-checkbox-full-content"><img class="gl-checkbox-full-content-icon" loading="lazy" src="./img/blockchain/avalanche.svg" alt="image" width="18" height="18"/><span>Avalanche</span></span></label><label class="filters__flex gl-checkbox-full-wrapper"><input class="gl-checkbox-full js-checkbox" type="checkbox" name="blockchain" value="Harmony" /><span class="gl-checkbox-full-content"><img class="gl-checkbox-full-content-icon" loading="lazy" src="./img/blockchain/harmony.svg" alt="image" width="18" height="18"/><span>Harmony</span></span></label><label class="filters__flex gl-checkbox-full-wrapper"><input class="gl-checkbox-full js-checkbox" type="checkbox" name="blockchain" value="EOS" /><span class="gl-checkbox-full-content"><img class="gl-checkbox-full-content-icon" loading="lazy" src="./img/blockchain/eos.svg" alt="image" width="18" height="18"/><span>EOS</span></span></label><label class="filters__flex gl-checkbox-full-wrapper"><input class="gl-checkbox-full js-checkbox" type="checkbox" name="blockchain" value="WAX" /><span class="gl-checkbox-full-content"><img class="gl-checkbox-full-content-icon" loading="lazy" src="./img/blockchain/max.svg" alt="image" width="18" height="18"/><span>WAX</span></span></label><label class="filters__flex gl-checkbox-full-wrapper"><input class="gl-checkbox-full js-checkbox" type="checkbox" name="blockchain" value="Other" /><span class="gl-checkbox-full-content"><span>Other</span></span></label></div>
+                  </div>
+                  <div class="filters__block">
+                    <div class="filters__checkboxes-col-2-wrapper">
+                      <div>
+                        <div class="filters__block-title">Device</div>
+                        <div class="filters__checkboxes-col-1"><label class="gl-checkbox-wrapper"><input class="gl-checkbox js-checkbox" type="checkbox" name="device" value="Web" /><span class="gl-checkbox-content gl-checkbox-content--nowrap"><span class="gl-checkbox-content-mark"></span><span>Web</span></span></label><label class="gl-checkbox-wrapper"><input class="gl-checkbox js-checkbox" type="checkbox" name="device" value="iOS" /><span class="gl-checkbox-content gl-checkbox-content--nowrap"><span class="gl-checkbox-content-mark"></span><span>iOS</span></span></label><label class="gl-checkbox-wrapper"><input class="gl-checkbox js-checkbox" type="checkbox" name="device" value="Android" /><span class="gl-checkbox-content gl-checkbox-content--nowrap"><span class="gl-checkbox-content-mark"></span><span>Android</span></span></label><label class="gl-checkbox-wrapper"><input class="gl-checkbox js-checkbox" type="checkbox" name="device" value="PC" /><span class="gl-checkbox-content gl-checkbox-content--nowrap"><span class="gl-checkbox-content-mark"></span><span>PC</span></span></label></div>
+                      </div>
+                      <div>
+                        <div class="filters__block-title">Status</div>
+                        <div class="filters__checkboxes-col-1"><label class="gl-checkbox-wrapper"><input class="gl-checkbox js-checkbox" type="checkbox" name="status" value="Live" /><span class="gl-checkbox-content gl-checkbox-content--nowrap"><span class="gl-checkbox-content-mark"></span><span>Live</span></span></label><label class="gl-checkbox-wrapper"><input class="gl-checkbox js-checkbox" type="checkbox" name="status" value="Alpha" /><span class="gl-checkbox-content gl-checkbox-content--nowrap"><span class="gl-checkbox-content-mark"></span><span>Alpha</span></span></label><label class="gl-checkbox-wrapper"><input class="gl-checkbox js-checkbox" type="checkbox" name="status" value="Beta" /><span class="gl-checkbox-content gl-checkbox-content--nowrap"><span class="gl-checkbox-content-mark"></span><span>Beta</span></span></label><label class="gl-checkbox-wrapper"><input class="gl-checkbox js-checkbox" type="checkbox" name="status" value="Dev" /><span class="gl-checkbox-content gl-checkbox-content--nowrap"><span class="gl-checkbox-content-mark"></span><span>Dev</span></span></label></div>
+                      </div>
+                      <div>
+                        <div class="filters__block-title">Free to play</div>
+                        <div class="filters__checkboxes-col-2-small"><label class="gl-checkbox-wrapper"><input class="gl-checkbox js-checkbox" type="checkbox" name="freeToPlay" value="Yes" data-exclusive="data-exclusive" /><span class="gl-checkbox-content gl-checkbox-content--nowrap"><span class="gl-checkbox-content-mark"></span><span>Yes</span></span></label><label class="gl-checkbox-wrapper"><input class="gl-checkbox js-checkbox" type="checkbox" name="freeToPlay" value="No" data-exclusive="data-exclusive" /><span class="gl-checkbox-content gl-checkbox-content--nowrap"><span class="gl-checkbox-content-mark"></span><span>No</span></span></label></div>
+                      </div>
+                      <div>
+                        <div class="filters__block-title">Scholarship</div>
+                        <div class="filters__checkboxes-col-2-small"><label class="gl-checkbox-wrapper"><input class="gl-checkbox js-checkbox" type="checkbox" name="scholarship" value="Yes" data-exclusive="data-exclusive" /><span class="gl-checkbox-content gl-checkbox-content--nowrap"><span class="gl-checkbox-content-mark"></span><span>Yes</span></span></label><label class="gl-checkbox-wrapper"><input class="gl-checkbox js-checkbox" type="checkbox" name="scholarship" value="No" data-exclusive="data-exclusive" /><span class="gl-checkbox-content gl-checkbox-content--nowrap"><span class="gl-checkbox-content-mark"></span><span>No</span></span></label></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="games-list" id="games-list"></div>
+          </div>
+          <div class="last-news gl-block gl-block--grey" id="last-news-host">
+            <div class="last-news__header">
+              <h2 class="gl-title">Last News</h2>
+              <div class="gl-subtitle">Gamers who play <a class="gl-link gl-purple-color">Thetan Arena</a> are also playing these games:</div>
+            </div>
+            <div class="last-news__content">
+              <div class="last-news__swiper-container gl-swiper swiper-container" id="js-swiper-container">
+                <div class="gl-swiper__swiper-wrapper swiper-wrapper">
+                  <div class="last-news__swiper-slide swiper-slide"><a class="last-news__swiper-link" href="">
+                      <picture>
+                        <source srcset="img/data-jpegs/last-news/1.webp" type="image/webp" /><img class="last-news__swiper-image" loading="lazy" src="img/data-jpegs/last-news/1.jpg" alt="image" width="400" height="256" />
+                      </picture>
+                      <div class="last-news__swiper-caption">Sky Mavis Drops Axie Infinity: Origins Season 1 Launch Date at AxieCon</div>
+                    </a></div>
+                  <div class="last-news__swiper-slide swiper-slide"><a class="last-news__swiper-link" href="">
+                      <picture>
+                        <source srcset="img/data-jpegs/last-news/1.webp" type="image/webp" /><img class="last-news__swiper-image" loading="lazy" src="img/data-jpegs/last-news/1.jpg" alt="image" width="400" height="256" />
+                      </picture>
+                      <div class="last-news__swiper-caption">Sky Mavis Drops Axie Infinity: Origins Season 1 Launch Date at AxieCon</div>
+                    </a></div>
+                  <div class="last-news__swiper-slide swiper-slide"><a class="last-news__swiper-link" href="">
+                      <picture>
+                        <source srcset="img/data-jpegs/last-news/2.webp" type="image/webp" /><img class="last-news__swiper-image" loading="lazy" src="img/data-jpegs/last-news/2.jpg" alt="image" width="400" height="256" />
+                      </picture>
+                      <div class="last-news__swiper-caption">Afterland to go live in alpha on September 12</div>
+                    </a></div>
+                  <div class="last-news__swiper-slide swiper-slide"><a class="last-news__swiper-link" href="">
+                      <picture>
+                        <source srcset="img/data-jpegs/last-news/3.webp" type="image/webp" /><img class="last-news__swiper-image" loading="lazy" src="img/data-jpegs/last-news/3.jpg" alt="image" width="400" height="256" />
+                      </picture>
+                      <div class="last-news__swiper-caption">Participate in Undead Blocks Free P2E Tournament and win $50,000</div>
+                    </a></div>
+                </div>
+                <div class="last-news__swiper-btns-wrapper"><button class="gl-swiper__btn-nav gl-swiper__btn-nav--prev" id="js-btn-prev"></button><button class="gl-swiper__btn-nav gl-swiper__btn-nav--next" id="js-btn-next"></button></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="side-bar" id="side-bar"><button class="side-bar__close-btn" type="button" id="side-bar-close-btn"><img class="side-bar__img" loading="lazy" src="img/close.svg" alt="close" width="20" height="20" /></button><button class="side-bar__btn side-bar__btn--blue" type="button">connect wallet</button>
+      <nav class="side-bar__links-wrapper"><a class="side-bar__link--mark side-bar__link" href="/">guild</a><a class="side-bar__link" href="/games.html">games</a><a class="side-bar__link" href="" disabled="disabled">nft</a><a class="side-bar__link" href="" disabled="disabled">airdrop</a></nav>
+      <div class="side-bar__login-links-wrapper"><a class="side-bar__login-link" href="/login-block.html">Log in</a><a class="side-bar__login-link" href="/signup.html">Sign up</a></div>
+      <div class="side-bar__social"><a class="side-bar__social-link--twitter side-bar__social-link" href=""></a><a class="side-bar__social-link--telegram side-bar__social-link" href=""></a><a class="side-bar__social-link--discord side-bar__social-link" href=""></a><a class="side-bar__social-link--youtube side-bar__social-link" href=""></a><a class="side-bar__social-link--medium side-bar__social-link" href=""></a></div>
+    </div>
+    <footer class="footer">
+      <div class="footer__page-content gl-page-content">
+        <div class="footer__content">
+          <nav class="footer__links-container"><a class="footer__link" href="">whitepaper</a><a class="footer__link" href="">Meta rent</a><a class="footer__link" href="">scoolarship</a><a class="footer__link" href="">mogg token</a><a class="footer__link" href="">team</a></nav>
+          <div class="footer__logo-link-container"><a class="footer__logo-link" href="/">
+              <picture>
+                <source srcset="img/logo-footer.webp" type="image/webp" /><img class="footer__logo" loading="lazy" src="img/logo-footer.svg" alt="logo-footer" width="222" height="110" />
+              </picture>
+            </a></div>
+          <div class="footer__right-block">
+            <div class="footer__social-container"><a class="footer__social-link--twitter footer__social-link" href=""></a><a class="footer__social-link--telegram footer__social-link" href=""></a><a class="footer__social-link--discord footer__social-link" href=""></a><a class="footer__social-link--youtube footer__social-link" href=""></a><a class="footer__social-link--medium footer__social-link" href=""></a></div><!-- переключатель языка--><!--.gl-fl-hide--><!--  +lang-select()-->
+            <div class="footer__btns-wrapper"><a class="footer__btn" href="/login-block.html">Log in</a><a class="footer__btn" href="/signup.html">Sign up</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__info"><span>Contact email for partnership:</span><a class="footer__info-link" href="mailto:pr@metadao.gg">pr@metadao.gg</a><br/><span>Support:</span><a class="footer__info-link" href="mailto:support@metadao.gg">support@metadao.gg</a></div>
+    </footer>
+  </div><script src="js/bundle.js">
+  </script>
+
+</body>
+
+</html>

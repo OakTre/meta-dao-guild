@@ -1,0 +1,60 @@
+%set-max-height {
+  flex: 1 1 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+%modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  transition: 400ms opacity;
+  background-color: rgba(0, 0, 0, .2);
+  pointer-events: none;
+  z-index: var(--z-index-modal);
+
+  &.mod-show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &:-moz-placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+@mixin customScrollbar {
+  &::-webkit-scrollbar {
+    width: 2px;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--purple-color);
+  }
+
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}

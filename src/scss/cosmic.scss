@@ -1,0 +1,205 @@
+.cosmic {
+  @media (min-width: 640px) {
+    background-image: url("/img/bg/blurred-bg.png");
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #080b24;
+  }
+
+  @media (max-width: 640px) {
+    background:
+      radial-gradient(183.76% 76.42% at 50% 107.8%, #00277A 0%, rgba(8, 10, 34, 0) 82.11%),
+      radial-gradient(83.01% 198.33% at -24.27% 0%, #20C0FF 0%, rgba(24, 28, 45, 0) 73.73%)
+      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+      radial-gradient(86.97% 155.48% at 127.74% -1.6%, #CA2DFF 0%, rgba(24, 28, 45, 0) 73.01%)
+      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+      #191C42;
+  }
+
+  &__layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__header {
+    width: 100%;
+    margin-bottom: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 32px 24px 22px;
+    display: flex;
+    justify-content: center;
+
+    @media (max-width: 640px) {
+      padding: 16px 24px 14px;
+    }
+
+    &__logo {
+      width: 171px;
+      height: 86px;
+      > img {
+        width: 100%;
+      }
+
+      @media (max-width: 640px) {
+        width: 112px;
+        height: 56px;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__footer {
+    width: 100%;
+    margin-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 24px 24px 32px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.64);
+
+    @media (max-width: 640px) {
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+
+  &__form {
+    color: rgba(255, 255, 255, 0.92);
+    margin: auto 0;
+    border-radius: var(--border-radius-huge);
+    background:
+      radial-gradient(183.76% 76.42% at 50% 107.8%, #00277A 0%, rgba(8, 10, 34, 0) 82.11%),
+      radial-gradient(83.01% 198.33% at -24.27% 0%, #20C0FF 0%, rgba(24, 28, 45, 0) 73.73%)
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+      radial-gradient(86.97% 155.48% at 127.74% -1.6%, #CA2DFF 0%, rgba(24, 28, 45, 0) 73.01%)
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+      #191C42;
+    padding: 48px 36px 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+    width: 620px;
+    max-width: 100%;
+
+    @media (max-width: 640px) {
+      background: transparent;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+
+  &__form-header {
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 36px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  &__input-container {
+    .label {
+      display: block;
+      margin-bottom: 16px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .checkboxes {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 11px;
+
+      label {
+        cursor: pointer;
+      }
+
+      input {
+        display: none;
+        & + span {
+          display: flex;
+          align-items: center;
+          gap: 11px;
+        }
+        & + span:before {
+          display: block;
+          content: "";
+          width: 18px;
+          height: 18px;
+          border: 1px solid rgba(255, 255, 255, 0.56);
+          border-radius: 2px;
+        }
+        &:checked + span:before {
+          border-color: #3042FF;
+          background-image: radial-gradient(114.48% 127.78% at -8.33% 127.78%, rgba(68, 220, 255, 0.71) 0%, rgba(120, 199, 217, 0) 84.87%)
+            /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+          url("/img/check-white.svg");
+          background-repeat: no-repeat;
+          background-size: 100%, 80%;
+          background-position: 100%, 42%;
+          background-color: #3042FF;
+        }
+      }
+    }
+
+    > input {
+      font-family: 'GothamPro', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      background: transparent;
+      display: block;
+      width: 100%;
+      height: 56px;
+      border: 1px solid rgba(255, 255, 255, 0.32);
+      border-radius: 12px;
+      padding: 16px 24px;
+      color: rgba(255, 255, 255, 0.92);
+
+      &:focus {
+        border-color: rgba(255, 255, 255, 0.86);
+      }
+      &:disabled {
+        background: rgba(255, 255, 255, 0.06);
+        opacity: .64;
+        border-color: rgba(255, 255, 255, 0.32);
+      }
+    }
+    .cosmic__input-error {
+      display: none;
+    }
+    &.mod-error {
+      > input {
+        border-color: rgba(237, 81, 81, 0.86);
+      }
+      .cosmic__input-error {
+        display: block;
+        padding-top: 8px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        color: #ED5151;
+      }
+    }
+  }
+
+  &__actions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    @media (max-width: 480px) {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+}

@@ -1,0 +1,419 @@
+$main-btn-box-shadow: inset 0 4px 13px rgba(255, 255, 255, 0.25);
+$main-btn-border-radius: var(--border-radius-big);
+
+.gl-btn {
+  position: relative;
+  background: radial-gradient(66.58% 146.41% at -2.19% 16.98%, #14BDFF 0%, rgba(3, 57, 89, 0) 74.36%), radial-gradient(80.2% 129.9% at 96.3% 0%, #C51BFF 0%, rgba(3, 57, 89, 0) 100%), radial-gradient(72.79% 65.22% at 80.51% 92.28%, rgba(68, 220, 255, 0.71) 0%, rgba(120, 199, 217, 0) 84.87%), #3042FF;
+  box-shadow: $main-btn-box-shadow;
+  border-radius: $main-btn-border-radius;
+  z-index: 1;
+  padding: 10px;
+  width: 168px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  text-transform: uppercase;
+
+  &:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    transition: opacity var(--transition-duration-short);
+    box-shadow: $main-btn-box-shadow;
+    border-radius: $main-btn-border-radius;
+    opacity: 0;
+  }
+
+  &:hover {
+    &:before {
+      opacity: 1;
+      background: radial-gradient(66.58% 146.41% at -2.19% 16.98%, #53ccff 0%, rgba(12, 77, 119, 0) 74.36%), radial-gradient(80.2% 129.9% at 96.3% 0%, #ce59fd 0%, rgba(7, 66, 101, 0) 100%), radial-gradient(72.79% 65.22% at 80.51% 92.28%, rgba(68, 220, 255, 0.71) 0%, rgba(120, 199, 217, 0) 84.87%), #3042FF
+    }
+  }
+
+  &:disabled {
+    background: var(--purple-dark-background);
+    color: var(--gray-color-opasity-2);
+    box-shadow: none;
+    pointer-events: none;
+
+    &:before {
+      content: none;
+    }
+  }
+
+  &--small {
+    font-size: 12px;
+    line-height: 1;
+    padding: 8px;
+    border-radius: var(--border-radius-verty-small);
+  }
+}
+
+.gl-btn-secondary {
+  padding: 10px 18px;
+  font-weight: 700;
+  background-color: var(--purple-color);
+  border-radius: var(--border-radius-verty-small);
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: uppercase;
+  transition: all var(--transition-duration-fast);
+
+  &:hover {
+    background-color: var(--purple-color-hover);
+  }
+}
+
+.gl-btn-third {
+  position: relative;
+  padding: 16px 55px;
+  background-color: rgba(45, 62, 199, 0.32);
+  color: var(--color-white-alfa);
+  font: 700 16px/24px var(--font-family-main);
+  border-radius: 12px;
+  text-transform: uppercase;
+  transition: background-color var(--transition-duration-fast);
+
+  &:hover {
+    background-color: rgba(53, 73, 224, 0.32);
+  }
+}
+
+.gl-checkbox-wrapper {
+  cursor: pointer;
+  display: block;
+}
+
+.gl-checkbox {
+  display: none;
+
+  &:checked {
+    +.gl-checkbox-content {
+      .gl-checkbox-content-mark {
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.gl-checkbox-content {
+  font-size: 14px;
+  line-height: 14px;
+  user-select: none;
+  display: flex;
+
+  &--nowrap {
+    white-space: nowrap;
+  }
+}
+
+.gl-checkbox-content-mark {
+  flex: 0 0 15px;
+  width: 15px;
+  height: 15px;
+  background: var(--gray-color-opasity-05);
+  border: 1px solid var(--gray-color-opasity-2);
+  border-radius: var(--border-radius-vaery-tiny);
+  margin-right: 10px;
+  position: relative;
+
+  &:after {
+    position: absolute;
+    content: "";
+    top: 2px;
+    left: 2px;
+    width: 9px;
+    height: 9px;
+    background-color: var(--purple-color);
+    border-radius: var(--border-radius-vaery-tiny);
+    opacity: 0;
+    transition: opacity var(--transition-duration-fast);
+  }
+}
+
+.gl-checkbox-full-wrapper {
+  cursor: pointer;
+}
+
+.gl-checkbox-full {
+  display: none;
+
+  &:checked {
+    +.gl-checkbox-full-content {
+      background: var(--purple-pale-color);
+      border-color: var(--purple-color);
+      ;
+    }
+  }
+}
+
+.gl-checkbox-full-content {
+  display: flex;
+  align-items: center;
+  padding: 3px 5px;
+  font-size: 14px;
+  line-height: 14px;
+  background-color: var(--gray-color-opasity-05);
+  border: 1px solid var(--gray-color-opasity-2);
+  border-radius: var(--border-radius-middle);
+  transition: all var(--transition-duration-fast);
+  min-height: 24px;
+}
+
+.gl-checkbox-full-content-icon {
+  height: 18px;
+  margin-right: 4px;
+}
+
+.gl-checkbox-arrow {
+  display: inline-block;
+  cursor: pointer;
+
+  &.is-disabled {
+    opacity: 0.8;
+    pointer-events: none;
+  }
+
+  &__control {
+    &:checked {
+      ~.gl-checkbox-arrow__text {
+        &::before {
+          border: none;
+          background: radial-gradient(114.48% 127.78% at -8.33% 127.78%, rgba(68, 220, 255, 0.71) 0%, rgba(120, 199, 217, 0) 84.87%), #3042FF;
+        }
+
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__text {
+    display: block;
+    position: relative;
+    padding-left: 32px;
+    color: var(--color-white-alfa);
+    font: 400 16px/24px var(--font-family-main);
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 0.3rem;
+      width: 18px;
+      height: 18px;
+      border: 1.5px solid rgba(255 255 255 / 56%);
+      border-radius: 3px;
+      transform: translateY(-50%);
+      content: "";
+    }
+
+    &::after {
+      left: 0.5rem;
+      width: 12px;
+      height: 12px;
+      border: none;
+      background-image: url("../img/check-white.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      opacity: 0;
+    }
+  }
+
+  &--rounded {
+    .gl-checkbox-arrow__control {
+      &:checked {
+        ~ .gl-checkbox-arrow__text {
+          &::before {
+            width: 21px;
+            height: 21px;
+            background: none;
+            background-image: url("../img/shape.svg");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center center;
+          }
+        }
+      }
+    }
+
+    .gl-checkbox-arrow__text {
+      &::before {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+      }
+
+      &::after {
+        display: none !important;
+      }
+    }
+  }
+}
+
+.gl-input {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255 255 255 / 32%);
+  background-color: transparent;
+  color: var(--white-color);
+  font: var(--font16);
+  transition: border-color var(--transition-duration-short);
+
+  &:focus {
+    border-color: var(--white-color);
+  }
+
+  &.parsley-error {
+    border-color: rgba(237,81,81,.86);
+  }
+
+  @include placeholder() {
+    color: rgba(255 255 255 / 48%);
+  }
+}
+
+.parsley-errors-list {
+  padding-top: 8px;
+  color: rgba(237,81,81,.86);
+}
+
+.gl-textarea {
+  display: block;
+  width: 100%;
+  height: 104px;
+  padding: 16px;
+  color: var(--white-color);
+  border-radius: 12px;
+  border: 1px solid rgba(255 255 255 / 32%);
+  background-color: transparent;
+  font: var(--font16);
+  transition: border-color var(--transition-duration-short);
+  resize: none;
+
+  @include customScrollbar();
+
+  &:focus {
+    border-color: var(--white-color);
+  }
+
+  @include placeholder() {
+    color: rgba(255 255 255 / 48%);
+  }
+}
+
+.gl-input-file {
+  position: relative;
+  display: block;
+  padding: 12px 24px;
+  background-color: rgba(45 62 199 / 32%);
+  border-radius: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &__text {
+    display: flex;
+    align-items: center;
+    font: 700 16px/24px var(--font-family-main);
+
+    &::before {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      margin-right: 12px;
+      background-image: url("../img/upload.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      content: "";
+
+      @include for-md-down {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    &.is-active {
+      color: rgba(255 255 255 / 92%);
+      font-weight: 400;
+      text-transform: lowercase;
+
+      &::before {
+        background-image: url("../img/file.svg");
+      }
+
+      &::after {
+        flex-shrink: 0;
+        width: 20px;
+        height: 20px;
+        margin-left: 12px;
+        background-image: url("../img/close-opacity.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        transform: translateY(1px);
+        content: "";
+      }
+
+      &:hover {
+        &::after {
+          height: 14px;
+          background-image: url("../img/close.svg");
+        }
+      }
+    }
+
+    &--bg {
+      padding: 12px 24px;
+      background-color: rgba(45 62 199 / 32%);
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    @include for-md-down {
+      font: 700 14px/20px var(--font-family-main);
+    }
+  }
+
+  .parsley-errors-list {
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 0;
+    text-transform: none;
+    white-space: nowrap;
+  }
+}
+
+
+.gl-controls-count-wrapper {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    z-index: 1;
+    color: rgba(255 255 255 / 48%);
+    font: 400 12px/18px var(--font-family-main);
+    content: attr(data-count);
+  }
+
+  .gl-textarea,
+  .gl-input {
+    padding-right: 30px;
+
+    @include for-md-down {
+      padding-right: 44px;
+    }
+  }
+}

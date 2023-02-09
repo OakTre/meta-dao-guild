@@ -1,0 +1,26 @@
+//- Все примеси в этом файле должны начинаться c имени блока (marketplace)
+
+mixin marketplace()
+  - const linksWrapper = [{href: "", imgName: "img/data-jpegs/marketplace/1", name: "ERRANT GHOST", price: "$3.9"}, {href: "", imgName: "img/data-jpegs/marketplace/2", name: "VEINKA", price: "$4.21"}, {href: "", imgName: "img/data-jpegs/marketplace/3", name: "TAEKWON", price: "$42.63"}, {href: "", imgName: "img/data-jpegs/marketplace/4", name: "PHOENIX", price: "$49.23"}, {href: "", imgName: "img/data-jpegs/marketplace/5", name: "PHOENIX", price: "$49.23"}, {href: "", imgName: "img/data-jpegs/marketplace/2", name: "VEINKA", price: "$4.21"}];
+
+  .marketplace.gl-block#marketplace-host
+    .marketplace__header
+      h2.gl-title Marketplace
+      .gl-subtitle Buy NFT to start earning in the game <a class="gl-link gl-purple-color">Thetan Arena</a>
+
+    .marketplace__content
+      .marketplace__swiper-container.gl-swiper.swiper-container#js-swiper-container
+        .gl-swiper__swiper-wrapper.swiper-wrapper
+          each link in linksWrapper
+            .marketplace__swiper-slide.swiper-slide
+              a(href=link.href).marketplace__slide-link
+                picture
+                  source(srcset=`${ link.imgName }.webp`, type="image/webp")
+                  img(loading="lazy" src=`${ link.imgName }.jpg`, alt="img" width="232" height="340").marketplace__slide-image
+                .marketplace__slide-info-wrapper
+                  .marketplace__slide-name= link.name
+                  .marketplace__slide-price= link.price
+
+      .marketplace__swiper-btns-wrapper
+        button.gl-swiper__btn-nav.gl-swiper__btn-nav--prev#js-btn-prev
+        button.gl-swiper__btn-nav.gl-swiper__btn-nav--next#js-btn-next

@@ -1,0 +1,261 @@
+@import "src/scss/sizes";
+
+.header {
+  background-color: var(--header-color);
+  border-bottom: 1px solid var(--header-border-color);
+  min-height: Min(12.348vw, 163px);
+  display: flex;
+  align-items: center;
+  padding: 30px 0;
+
+  @include for-pre-mx-down {
+    padding: 15px 0;
+    min-height: initial;
+  }
+
+  @include for-hg-down {
+    padding: 10px 0;
+    min-height: Min(12.348vw, 163px);
+  }
+
+  &__content-wrapper {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto auto;
+    grid-gap: 15px 20px;
+    grid-template-areas:
+      "logo nav btns-login btn-connect"; // "logo nav btn-connect lang"; заменить, когда появится селект языка */
+
+    @include for-pre-mx-down {
+      grid-template-columns: 15% 515px auto auto;
+      justify-content: space-between;
+      grid-template-areas:
+        "logo nav btn-connect btns-login"
+      // "logo nav btn-connect lang"; вернуть, когда появится селект языка */
+    }
+
+    @include for-hg-down {
+      grid-template-columns: auto 1fr auto auto;
+      grid-template-areas:
+        "burger logo lang btns-login";
+      grid-gap: 30px;
+    }
+  }
+
+  &__nav-links-wrapper {
+    grid-area: nav;
+    display: flex;
+    align-items: center;
+    max-width: 600px;
+    margin: -10px -15px -10px 0;
+
+    @include for-pre-mx-down {
+      margin: -10px -10px;
+    }
+  }
+
+  &__nav-link {
+    color: var(--header-link-color);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 100%;
+    text-transform: uppercase;
+    transition: all var(--transition-duration-fast);
+    padding: 10px 15px;
+    border-radius: var(--border-radius-small);
+
+    @include for-pre-mx-down {
+      padding: 10px 10px;
+    }
+
+    &:hover {
+      &:not(.header__nav-link--guild) {
+        color: var(--purple-color);
+      }
+    }
+
+    &--guild {
+      color: var(--white-color);
+      background-color: var(--purple-color);
+
+      &:hover {
+        color: var(--purple-color);
+        background-color: var(--white-color);
+      }
+    }
+  }
+
+  &__logo-link {
+    grid-area: logo;
+    width: 100%;
+    height: auto;
+    margin-right: 100px;
+
+    @include for-pre-mx-down {
+      margin-right: 60px;
+    }
+  }
+
+  &__logo {
+    object-fit: contain;
+    max-width: 100%;
+    height: 100%;
+  }
+
+  &__btns-login-wrapper {
+    grid-area: btns-login;
+    display: flex;
+    align-items: center;
+
+    @include for-pre-mx-down {
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    @include for-hg-down {
+      justify-content: center;
+    }
+  }
+
+  &__login-icon {
+    height: 20px;
+  }
+
+  &__btn-connect-wrapper {
+    grid-area: btn-connect;
+    display: flex;
+    align-items: center;
+  }
+
+  &__btn {
+    color: var(--header-link-color);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 100%;
+    text-transform: uppercase;
+    transition: all var(--transition-duration-fast);
+
+    &:hover {
+      color: var(--purple-color);
+    }
+
+    & + & {
+      margin-left: 30px;
+
+      @include for-pre-mx-down {
+        margin-left: 0;
+        margin-top: 20px;
+      }
+
+      @include for-hg-down {
+        margin-top: 0;
+      }
+    }
+
+    &--blue {
+      color: var(--blue-color);
+
+      &:hover {
+        color: var(--white-color);
+      }
+
+      @include for-pre-mx-up {
+        padding-left: 30px;
+        position: relative;
+
+        &:before {
+          position: absolute;
+          content: "";
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          background-color: var(--white-color);
+          width: 1px;
+          height: 200%;
+        }
+      }
+    }
+  }
+
+  &__lang-wrapper {
+    grid-area: lang;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include for-hg-down {
+      margin-right: -20px;
+    }
+  }
+
+  &__burger-btn-wrapper {
+    grid-area: burger;
+    display: flex;
+    align-items: center;
+  }
+
+  $burger-size: 28px; // размеры кнопки
+  $burger-line-width: 16px; // ширина линии
+  $burger-line-height: 2px; // высота линии
+  $burger-line-margin: 4px; // отступ между линиями
+
+  &__burger-btn {
+    position: relative;
+    display: block;
+    width: $burger-size;
+    height: $burger-size;
+
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: $burger-line-width;
+      transition: all var(--transition-duration-short) ease;
+      margin-left: calc((#{$burger-size} - #{$burger-line-width}) / 2);
+    }
+
+    /* верхняя и нижняя линии бургера */
+    &:before {
+      top: calc(
+        #{$burger-size} / 2 -
+        #{$burger-line-height} / 2 -
+        #{$burger-line-margin} -
+        #{$burger-line-height}
+      );
+      height: calc(
+        #{$burger-line-height} * 3 +
+        #{$burger-line-margin} * 2
+      );
+      border-top: $burger-line-height solid var(--white-color);
+      border-bottom: $burger-line-height solid var(--white-color);
+    }
+
+    /* средняя линия бургера */
+    &:after {
+      top: calc(
+        #{$burger-size} / 2 -
+        #{$burger-line-height} / 2
+      );
+      height: $burger-line-height;
+      background-color: var(--white-color);
+    }
+
+    &.mod-close {
+      &:before, &:after {
+        top: 50%;
+        width: 20px;
+      }
+
+      &:before {
+        border: none;
+        height: $burger-line-height;
+        background: var(--white-color);
+        transform: rotate(45deg);
+      }
+
+      &:after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}

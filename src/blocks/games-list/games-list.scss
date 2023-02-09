@@ -1,0 +1,270 @@
+@import "src/scss/sizes";
+
+.games-list {
+  &__try-again-btn {
+    text-decoration: underline;
+  }
+
+  .swiper-slide {
+    position: relative;
+    height: 100%;
+  }
+
+  .swiper-slide &__loader-layer {
+    height: (100%);
+    min-height: 120px;
+    position: absolute;
+    top: 10px;
+    left: 16px;
+    right: 16px;
+    border-radius: var(--border-radius-huge);
+    background-color: rgba(0,0,0,.4);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__loader-container {
+    text-align: center;
+    padding-top: 24px;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__swiper-wrapper {
+    padding-bottom: 56px;
+  }
+
+  &__table {
+    margin-top: 10px;
+    width: 100%;
+    animation: appear .2s linear;
+  }
+
+  @keyframes appear {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  &__thead {
+    border-bottom: 1px solid var(--table-border-color);
+  }
+
+  &__title, &__cell {
+    text-align: center;
+    font-size: 14px;
+    line-height: 16px;
+
+    &:first-child {
+      padding-left: 0;
+      text-align: left;
+    }
+
+    &:nth-child(2) {
+      text-align: left;
+    }
+
+    &:last-child {
+      padding-right: 0;
+      text-align: right;
+
+      @include for-md-down {
+        padding-right: var(--block-padding-side);
+      }
+    }
+  }
+
+  &__title {
+    padding: 24px 12px;
+
+    @include for-hg-down {
+      padding: 12px 6px;
+    }
+
+    &:first-child {
+      padding-right: 10px;
+    }
+
+    &--right {
+      text-align: right;
+    }
+  }
+
+  &__row {
+    border-bottom: 1px solid var(--table-border-color);
+
+    //&:last-child {
+    //  .games-list__cell {
+    //    padding-bottom: 30px;
+    //  }
+    //}
+
+    &--flex {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__cell {
+    padding: 12px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: 500;
+
+    &:nth-child(1) {
+      width: 40px;
+      max-width: 100%;
+    }
+
+    &:nth-child(2) {
+      width: 310px;
+      max-width: 100%;
+    }
+
+    &:nth-child(3) {
+      width: 114px;
+      max-width: 100%;
+    }
+
+    &:nth-child(4) {
+      width: 230px;
+      max-width: 100%;
+    }
+
+    &:nth-child(5) {
+      width: 138px;
+      max-width: 100%;
+    }
+
+    &:nth-child(6) {
+      width: 102px;
+      max-width: 100%;
+    }
+
+    &:nth-child(7) {
+      width: 88px;
+      max-width: 100%;
+    }
+
+    &:nth-child(8) {
+      width: 114px;
+      max-width: 100%;
+    }
+
+    &:nth-child(9) {
+      width: 108px;
+      max-width: 100%;
+    }
+
+    &:nth-child(10) {
+      width: 140px;
+      max-width: 100%;
+    }
+
+    @include for-hg-down {
+      padding: 12px 6px;
+    }
+
+    &:first-child {
+      padding-right: 0;
+    }
+
+    &--green {
+      color: var(--green-color)
+    }
+
+    &--blue {
+      color: var(--blue-color);
+    }
+
+    &--orange {
+      color: var(--orange-color);
+    }
+  }
+
+  &__cell-content-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &--left {
+      justify-content: flex-start;
+    }
+  }
+
+  &__cell-name-img {
+    width: 54px;
+    height: 54px;
+    border-radius: var(--border-radius-small);
+    margin-right: 12px;
+
+    @include for-hg-down {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &__cell-text-big {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 16px;
+
+    @include for-hg-down {
+      font-size: 14px;
+      line-height: 14px;
+    }
+  }
+
+  &__cell-text-right {
+    text-align: right;
+  }
+
+  &__cell-img-big {
+    height: 30px;
+
+    & + & {
+      margin-left: 8px;
+    }
+  }
+
+  &__cell-img-small {
+    height: 24px;
+
+    & + & {
+      margin-left: 8px;
+    }
+  }
+
+  &__cell-text {
+    &--green {
+      color: var(--green-color)
+    }
+
+    &--red {
+      color: var(--red-color)
+    }
+  }
+
+  &__svg-wrapper {
+    height: 54px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &__svg-chart {
+    width: 100px;
+  }
+
+  &__polyline-chart {
+    transform: translateY(-8px);
+  }
+}

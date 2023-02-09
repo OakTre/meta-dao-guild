@@ -1,0 +1,9 @@
+//- Все примеси в этом файле должны начинаться c имени блока (lang-select)
+
+mixin lang-select()
+  - const langList = [{text: "EN", value: "en"}, {text: "RU", value: "ru"}];
+
+  .lang-select
+    select#slim-select
+      each langItem in langList
+        option(value=langItem.value).js-option= langItem.text

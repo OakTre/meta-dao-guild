@@ -1,0 +1,20 @@
+//- Все примеси в этом файле должны начинаться c имени блока (main-slider)
+
+mixin main-slider()
+  - const linksWrapper = [{imgName: "img/data-jpegs/top-slider/1"}, {imgName: "img/data-jpegs/top-slider/2"}, {imgName: "img/data-jpegs/top-slider/3"}, {imgName: "img/data-jpegs/top-slider/4"}, {imgName: "img/data-jpegs/top-slider/1"}, {imgName: "img/data-jpegs/top-slider/2"}, {imgName: "img/data-jpegs/top-slider/3"}, {imgName: "img/data-jpegs/top-slider/4"}];
+
+  .main-slider#main-slider-host
+    .main-slider__content
+      .main-slider__swiper-container.gl-swiper.swiper-container#js-swiper-container
+        .gl-swiper__swiper-wrapper.swiper-wrapper.js-baguette
+          each link in linksWrapper
+            .main-slider__swiper-slide.swiper-slide
+              a(href=`${ link.imgName }.webp`).main-slider__swiper-link
+                picture
+                  source(srcset=`${ link.imgName }.webp`, type="image/webp")
+                  img(loading="lazy" src=`${ link.imgName }.jpg`, alt="img" width="306" height="190").main-slider__swiper-image
+
+      .main-slider__swiper-btns-wrapper
+        button.gl-swiper__btn-nav.gl-swiper__btn-nav--prev#js-btn-prev
+        button.gl-swiper__btn-nav.gl-swiper__btn-nav--next#js-btn-next
+

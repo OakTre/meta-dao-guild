@@ -1,0 +1,34 @@
+extends ../pug/layout.pug
+
+block meta
+  title Page 2
+  meta(name='description', content='')
+
+block layout-container
+  - const breadCrumbs = [{text: "Meta DAO", href: "#"}, {text: "discover games", href: "#"}, {text: "games"}];
+  - const stTitle1 = "Guild partners";
+  - const stSubtitle1 = "Our friends and strategic partners in play to earn";
+  - const tableTitles1 = ['Name', 'Status', 'F2P', 'Scholarship', 'Subscribe'];
+  - const partnersArr1 = [{iconName: 'img/data-jpegs/partners/1', name: 'WonderHero', cell2: 'Live', cell3: 'Yes', cell4: 'No', isSubscribe: false}, {iconName: 'img/data-jpegs/partners/2', name: 'The Walking Dead Empires', cell2: 'Dev.', cell3: 'No', cell4: 'Soon', isSubscribe: true}, {iconName: 'img/data-jpegs/partners/3', name: 'Last Expedition', cell2: 'Live', cell3: 'No', cell4: 'Yes', isSubscribe: false}, {iconName: 'img/data-jpegs/partners/4', name: 'Bullieverse', cell2: 'Live', cell3: 'No', cell4: 'Soon', isSubscribe: false}, {iconName: 'img/data-jpegs/partners/5', name: 'PinupWarlords', cell2: 'Presale', cell3: 'No', cell4: 'No', isSubscribe: true}];
+
+  - const stTitle2 = "Top Events";
+  - const stSubtitle2 = "List of events in which you must participate";
+  - const tableTitles2 = ['Name', 'Events', 'Start', 'End', 'Rewards'];
+  - const partnersArr2 = [{iconName: 'img/data-jpegs/partners/1', name: 'WonderHero', cell2: 'Tournament', cell3: '08.15.22', cell4: '09.15.22', rewards: "BUSD"}, {iconName: 'img/data-jpegs/partners/2', name: 'The Walking Dead Empires', cell2: 'Giveway', cell3: '08.15.22', cell4: '09.15.22', rewards: "NFT"}, {iconName: 'img/data-jpegs/partners/3', name: 'Last Expedition', cell2: 'Airdrop', cell3: '08.15.22', cell4: '09.15.22', rewards: "Token"}, {iconName: 'img/data-jpegs/partners/4', name: 'Bullieverse', cell2: 'Tournament', cell3: '08.15.22', cell4: 'TBA', rewards: "BUSD"}, {iconName: 'img/data-jpegs/partners/5', name: 'PinupWarlords', cell2: 'Giveway', cell3: '08.15.22', cell4: '09.15.22', rewards: "WL"}];
+
+  .gl-layout-container.overlayscrollbars
+    +header("games")
+
+    .gl-layout-content
+      .gl-bread-crumbs--main
+        +bread-crumbs(breadCrumbs)
+      .gl-page-content
+        .gl-grid-container-24
+          +slider-broadcast()
+          +statistics(1, false, stTitle1, stSubtitle1, tableTitles1, partnersArr1)
+          +statistics(2, true, stTitle2, stSubtitle2, tableTitles2, partnersArr2)
+          +filters()
+          +last-news()
+
+    +side-bar()
+    +footer()
