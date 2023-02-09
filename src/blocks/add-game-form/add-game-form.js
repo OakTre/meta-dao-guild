@@ -97,11 +97,11 @@ ready(() => {
 
   // для дев разработки
   // if (inptCurrentStep) {
-    // currentStep = inptCurrentStep
-    // setCurrentStep(inptCurrentStep);
-    // setCurrentNavBtn(inptCurrentStep);
-    // setCurrentHeading(inptCurrentStep);
-    // setGroupValidation(inptCurrentStep)
+  //   currentStep = inptCurrentStep
+  //   setCurrentStep(inptCurrentStep);
+  //   setCurrentNavBtn(inptCurrentStep);
+  //   setCurrentHeading(inptCurrentStep);
+  //   setGroupValidation(inptCurrentStep)
   // }
 
   nextBtn.addEventListener('click', (btn) => {

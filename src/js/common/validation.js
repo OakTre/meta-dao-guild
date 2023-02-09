@@ -131,11 +131,11 @@ window.Parsley.addValidator('multipleOf', {
   validateString: function(_value, maxSize, parsleyInstance) {
     let files = parsleyInstance.$element[0].files;
 
-    return files.length === 4;
+    return files.length >= 4 && files.length <= 10;
   },
   requirementType: 'string',
   messages: {
-    en: 'The number of files must be equal to %s.'
+    en: 'The number of files must be between 4 and 10'
   }
 });
 
