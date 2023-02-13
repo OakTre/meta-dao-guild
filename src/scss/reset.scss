@@ -1,5 +1,7 @@
 html {
   -webkit-text-size-adjust: 100%;
+
+  @include customBodyScrollbar();
 }
 
 html, body {

@@ -40,6 +40,24 @@
   }
 }
 
+@mixin customBodyScrollbar {
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--purple-color);
+  }
+
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2) !important;
+  }
+}
+
 @mixin customScrollbar {
   &::-webkit-scrollbar {
     width: 2px;
