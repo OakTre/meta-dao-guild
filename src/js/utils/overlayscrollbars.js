@@ -6,9 +6,12 @@ overlayscrollbarsElems.forEach(elem => {
   const isBody = elem.classList.contains("gl-layout-container");
   const instance = OverlayScrollbars(elem, {
     clickScroll: true,
+    update: {
+      debounce: [0, 89],
+    },
     overflow: {
       x: "hidden",
-    }
+    },
   });
   if (isBody) {
     window.scrollbar = instance;

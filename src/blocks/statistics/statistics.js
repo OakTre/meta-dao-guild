@@ -29,7 +29,7 @@ class Statistics {
       swiperPaginationElem,
       20,
       false,
-      window.innerWidth > 768,
+      true,
     );
   }
 }
