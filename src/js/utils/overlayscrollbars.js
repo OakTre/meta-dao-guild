@@ -7,7 +7,7 @@ overlayscrollbarsElems.forEach(elem => {
   const instance = OverlayScrollbars(elem, {
     clickScroll: true,
     update: {
-      debounce: [0, 89],
+      debounce: [0, 189],
     },
     overflow: {
       x: "hidden",
